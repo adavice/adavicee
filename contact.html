@@ -287,7 +287,20 @@ flexibility(document.documentElement);
 				<div class="elementor-widget-container">
 							<p>Please fill in the contact form, our team will get back to you.</p>						</div>
 				</div>
-			
+			<form id="form2" method="POST">
+				<h2>let's get in touch</h2>
+				<input type="text" name="name" required="" placeholder="Name">
+				<input type="email" name="email" required="" placeholder="Email">
+				<input type="text" name="phone" required="" placeholder="Phone number">
+				<input type="text" name="company" required="" placeholder="Company">
+				<!--<input type="text" name="interested" required="" placeholder="I'm interested in">-->
+				<textarea type="text-field" name="message" placeholder="Message"></textarea>
+				<!--				<div class="capt-box">-->
+				<!--					<img id="capt-img" src="./img/captcha.jpg" alt="">-->
+				<!--					<input id="capt-input"   type="text">-->
+				<!--				</div>-->
+				<input type="submit" class="button" value="Talk to our experts">
+			</form>
 				<div class="elementor-element elementor-element-b6cdd90 elementor-align-center elementor-widget elementor-widget-button" data-id="b6cdd90" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 							<div class="elementor-button-wrapper">
@@ -622,6 +635,35 @@ var astraAddon = {"sticky_active":"","svgIconClose":"<span class=\"ast-icon icon
 			<script>
 			/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
 			</script>
+			<script>
+        $('#form2').on('submit', function () {
+            var formData = {
+                'name': $('#name').val(),
+                'email': $('#email').val(),
+                'phone': $('#phone').val(),
+                'company': $('#company').val(),
+                'interested': $('#interested').val(),
+                'message': $('#message').val(),
+            };
+            $('#form2').prop('disabled', true);
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ 'event': 'send_form_talk_to_us' });
+            $.ajax({
+                type: 'POST',
+                url: '/c/contact_form',
+                data: formData,
+                encode: true,
+                success: function (data) {
+                    window.location.replace("./submitted.html");
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Something is wrong.");
+                }
+            });
+            return false;
+        });
+
+    </script>
 				
 
 </body><a99fc46f-c610-4354-aa1b-f6c2a99c003d><template shadowrootmode="closed">
