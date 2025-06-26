@@ -3,12 +3,10 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="shortcut icon"
-      href="./blog-files/favicon.ico"
-      type="image/x-icon"
-    />
-    <title>Help Station</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Affiliate Marketing Lingo 101: A Glossary for Media Buyers</title>
+    <meta name="image" property="og:image" content="https://adavice.com/img/glossary_article/main_pic.png">
+    <meta name="description" property="og:description" content="Your go-to dictionary in affiliate marketing world. Speak the industry's language!">
     <meta
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
@@ -353,7 +351,9 @@
       input[type="number"]:focus,
       textarea:focus,
       .wp-block-search__input:focus,
-      [] .ast-button-wrap .ast-mobile-menu-trigger-minimal:focus,
+      [data-section="section-header-mobile-trigger"]
+        .ast-button-wrap
+        .ast-mobile-menu-trigger-minimal:focus,
       .ast-mobile-popup-drawer.active .menu-toggle-close:focus,
       .woocommerce-ordering select.orderby:focus,
       #ast-scroll-top:focus,
@@ -1144,7 +1144,7 @@
         }
       }
       .ast-theme-transparent-header
-        []
+        [data-section="section-header-mobile-trigger"]
         .ast-button-wrap
         .ast-mobile-menu-trigger-minimal {
         background: transparent;
@@ -2918,17 +2918,25 @@
           display: grid;
         }
       }
-      [] .ast-button-wrap .ast-mobile-menu-trigger-minimal {
+      [data-section="section-header-mobile-trigger"]
+        .ast-button-wrap
+        .ast-mobile-menu-trigger-minimal {
         color: #ab7a2b;
         border: none;
         background: transparent;
       }
-      [] .ast-button-wrap .mobile-menu-toggle-icon .ast-mobile-svg {
+      [data-section="section-header-mobile-trigger"]
+        .ast-button-wrap
+        .mobile-menu-toggle-icon
+        .ast-mobile-svg {
         width: 20px;
         height: 20px;
         fill: #ab7a2b;
       }
-      [] .ast-button-wrap .mobile-menu-wrap .mobile-menu {
+      [data-section="section-header-mobile-trigger"]
+        .ast-button-wrap
+        .mobile-menu-wrap
+        .mobile-menu {
         color: #ab7a2b;
       }
       .ast-builder-menu-mobile
@@ -3177,6 +3185,13 @@
         visibility: visible;
       }
     </style>
+
+    <link
+      rel="stylesheet"
+      id="hfe-widgets-style-css"
+      href="frontend.css"
+      media="all"
+    />
 
     <style id="global-styles-inline-css">
       :root {
@@ -3710,7 +3725,12 @@
       href="header-footer-elementor.css"
       media="all"
     />
-
+    <link
+      rel="stylesheet"
+      id="elementor-icons-css"
+      href="elementor-icons.min.css"
+      media="all"
+    />
     <link
       rel="stylesheet"
       id="elementor-frontend-css"
@@ -3727,6 +3747,24 @@
 
     <link
       rel="stylesheet"
+      id="widget-heading-css"
+      href="widget-heading.min.css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="widget-divider-css"
+      href="widget-divider.min.css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="widget-text-editor-css"
+      href="widget-text-editor.min.css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
       id="widget-image-css"
       href="widget-image.min.css"
       media="all"
@@ -3737,15 +3775,18 @@
       href="post-206.css"
       media="all"
     />
-
-    <!--footer-->
     <link
       rel="stylesheet"
       id="elementor-post-91-css"
       href="post-91.css"
       media="all"
     />
-
+    <link
+      rel="stylesheet"
+      id="astra-addon-css-css"
+      href="astra-addon-671286073f3fd9-29303169.css"
+      media="all"
+    />
     <style id="astra-addon-css-inline-css">
       @media (min-width: 922px) {
         .ast-hide-display-device-desktop {
@@ -3788,36 +3829,43 @@
       media="all"
     />
 
+
+    <link
+      rel="stylesheet"
+      id="hfe-nav-menu-icons-css"
+      href="solid.css"
+      media="all"
+    />
+
+    <link
+      rel="stylesheet"
+      id="elementor-icons-shared-0-css"
+      href="fontawesome.min.css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="elementor-icons-fa-brands-css"
+      href="brands.min.css"
+      media="all"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body
     class="blog page-template-default page page-id-206 wp-custom-logo ehf-footer ehf-template-astra ehf-stylesheet-astra ast-desktop ast-page-builder-template ast-no-sidebar astra-4.8.3 ast-single-post ast-mobile-inherit-site-logo ast-inherit-site-logo-transparent ast-theme-transparent-header ast-hfb-header elementor-default elementor-kit-1321 elementor-page elementor-page-206 astra-addon-4.8.3 e--ua-blink e--ua-chrome e--ua-mac e--ua-webkit"
-    data-elementor-device-mode="desktop"
-    cz-shortcut-listen="true"
-    style=""
   >
-    <a class="skip-link screen-reader-text" href="" title="Skip to content">
-      Skip to content</a
-    >
-
     <div class="hfeed site" id="page">
       <header
         class="site-header ast-primary-submenu-animation-fade header-main-layout-1 ast-primary-menu-enabled ast-logo-title-inline ast-builder-menu-toggle-icon ast-mobile-header-inline"
         id="masthead"
-        itemtype=""
-        itemscope="itemscope"
-        itemid="#masthead"
       >
-        <div id="ast-desktop-header" data-toggle-type="dropdown">
+        <div id="ast-desktop-header">
           <div class="ast-main-header-wrap main-header-bar-wrap">
             <div
               class="ast-primary-header-bar ast-primary-header main-header-bar site-header-focus-item"
-              data-section="section-primary-header-builder"
             >
-              <div
-                class="site-primary-header-wrap ast-builder-grid-row-container site-header-focus-item ast-container"
-                data-section="section-primary-header-builder"
-              >
+              <div>
                 <div
                   class="ast-builder-grid-row ast-builder-grid-row-has-sides ast-builder-grid-row-no-center"
                 >
@@ -3826,25 +3874,13 @@
                   >
                     <div
                       class="ast-builder-layout-element ast-flex site-header-focus-item"
-                      data-section="title_tagline"
                     >
-                      <div
-                        class="site-branding ast-site-identity"
-                        itemtype="https://schema.org/Organization"
-                        itemscope="itemscope"
-                      >
+                      <div class="site-branding ast-site-identity">
                         <span class="site-logo-img"
-                          ><a
-                            href=""
-                            class="custom-logo-link"
-                            rel="home"
-                            aria-current="page"
+                          ><a class="custom-logo-link"
                             ><img
-                              width="200"
-                              height="66"
                               src="img/blog_logo.svg"
-                              class="custom-logo"
-                              decoding="async" /></a
+                              class="custom-logo"/></a
                         ></span>
                       </div>
                       <!-- .site-branding -->
@@ -3855,16 +3891,12 @@
                   >
                     <div
                       class="ast-builder-menu-1 ast-builder-menu ast-flex ast-builder-menu-1-focus-item ast-builder-layout-element site-header-focus-item"
-                      data-section="section-hb-menu-1"
                     >
                       <div class="ast-main-header-bar-alignment">
                         <div class="main-header-bar-navigation">
                           <nav
                             class="site-navigation ast-flex-grow-1 navigation-accessibility site-header-focus-item"
                             id="primary-site-navigation-desktop"
-                            aria-label="Site Navigation: Main"
-                            itemtype="https://schema.org/SiteNavigationElement"
-                            itemscope="itemscope"
                           >
                             <div class="main-navigation ast-inline-flex">
                               <ul
@@ -3875,10 +3907,7 @@
                                   id="menu-item-272"
                                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home page_item page-item-264 current_page_item menu-item-272"
                                 >
-                                  <a
-                                    href="insights.html"
-                                    aria-current="page"
-                                    class="menu-link"
+                                  <a href="insights.html" class="menu-link"
                                     >Insights</a
                                   >
                                 </li>
@@ -3886,10 +3915,7 @@
                                   id="menu-item-171"
                                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-171"
                                 >
-                                  <a
-                                    aria-expanded="false"
-                                    href="updates.html"
-                                    class="menu-link"
+                                  <a href="updates.html" class="menu-link"
                                     >Updates</a
                                   >
                                 </li>
@@ -3897,10 +3923,7 @@
                                   id="menu-item-171"
                                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-171"
                                 >
-                                  <a
-                                    aria-expanded="false"
-                                    href="help.html"
-                                    class="menu-link"
+                                  <a href="help.html" class="menu-link"
                                     >Help Station
                                   </a>
                                 </li>
@@ -3909,7 +3932,6 @@
                                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-171"
                                 >
                                   <a
-                                    aria-expanded="false"
                                     href="https://dsp.adavice.com/#/login?"
                                     class="menu-link"
                                     >Log In
@@ -3920,7 +3942,6 @@
                                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-171"
                                 >
                                   <a
-                                    aria-expanded="false"
                                     href="https://dsp.adavice.com/#/signup"
                                     class="menu-link"
                                     >Sign Up
@@ -3931,7 +3952,6 @@
                           </nav>
                         </div>
                       </div>
-
                       <div class="ast-main-header-bar-alignment">
                         <div class="main-header-bar-navigation">
                           <form class="search_block">
@@ -3948,15 +3968,10 @@
           </div>
         </div>
         <!-- Main Header Bar Wrap -->
-        <div
-          id="ast-mobile-header"
-          class="ast-mobile-header-wrap"
-          data-type="dropdown"
-        >
+        <div id="ast-mobile-header" class="ast-mobile-header-wrap">
           <div class="ast-main-header-wrap main-header-bar-wrap">
             <div
               class="ast-primary-header-bar ast-primary-header main-header-bar site-primary-header-wrap site-header-focus-item ast-builder-grid-row-layout-default ast-builder-grid-row-tablet-layout-default ast-builder-grid-row-mobile-layout-default"
-              data-section="section-transparent-header"
             >
               <div
                 class="ast-builder-grid-row ast-builder-grid-row-has-sides ast-builder-grid-row-no-center"
@@ -3966,26 +3981,13 @@
                 >
                   <div
                     class="ast-builder-layout-element ast-flex site-header-focus-item"
-                    data-section="title_tagline"
                   >
-                    <div
-                      class="site-branding ast-site-identity"
-                      itemtype="https://schema.org/Organization"
-                      itemscope="itemscope"
-                    >
+                    <div class="site-branding ast-site-identity">
                       <span class="site-logo-img"
-                        ><a
-                          href="index.html"
-                          class="custom-logo-link"
-                          rel="home"
-                          aria-current="page"
+                        ><a href="index.html" class="custom-logo-link"
                           ><img
-                            width="200"
-                            height="66"
                             src="img/blog_logo.svg"
-                            class="custom-logo"
-                            decoding="async"
-                            sizes="(max-width: 200px) 100vw, 200px" /></a
+                            class="custom-logo" /></a
                       ></span>
                     </div>
                     <!-- .site-branding -->
@@ -3996,18 +3998,15 @@
                 >
                   <div
                     class="ast-builder-layout-element ast-flex site-header-focus-item"
-                    data-section="section-header-mobile-trigger"
                   >
                     <div class="ast-button-wrap">
                       <button
                         type="button"
                         class="menu-toggle main-header-menu-toggle ast-mobile-menu-trigger-minimal"
-                        aria-expanded="false"
                       >
                         <span class="screen-reader-text">Main Menu</span>
                         <span class="mobile-menu-toggle-icon">
                           <span
-                            aria-hidden="true"
                             class="ahfb-svg-iconset ast-inline-flex svg-baseline"
                             ><svg
                               class="ast-mobile-svg ast-menu-svg"
@@ -4022,7 +4021,6 @@
                                 d="M3 13h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1zM3 7h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1zM3 19h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1z"
                               ></path></svg></span
                           ><span
-                            aria-hidden="true"
                             class="ahfb-svg-iconset ast-inline-flex svg-baseline"
                             ><svg
                               class="ast-mobile-svg ast-close-svg"
@@ -4048,16 +4046,12 @@
           <div class="ast-mobile-header-content content-align-flex-start">
             <div
               class="ast-builder-menu-mobile ast-builder-menu ast-builder-menu-mobile-focus-item ast-builder-layout-element site-header-focus-item"
-              data-section="section-header-mobile-menu"
             >
               <div class="ast-main-header-bar-alignment">
                 <div class="main-header-bar-navigation">
                   <nav
                     class="site-navigation ast-flex-grow-1 navigation-accessibility"
                     id="ast-mobile-site-navigation"
-                    aria-label="Site Navigation"
-                    itemtype=""
-                    itemscope="itemscope"
                   >
                     <div id="ast-hf-mobile-menu" class="main-navigation">
                       <ul
@@ -4101,7 +4095,6 @@
           </div>
         </div>
       </header>
-      <!-- #masthead -->
       <div id="content" class="site-content">
         <div class="ast-container">
           <div id="primary" class="content-area primary">
@@ -4113,19 +4106,15 @@
                 <header
                   class="entry-header ast-no-thumbnail ast-no-title ast-header-without-markup"
                 ></header>
-                <!-- .entry-header -->
 
-                <div class="entry-content clear" itemprop="text">
+                <div class="entry-content clear">
                   <div
-                    data-elementor-type="wp-page"
                     data-elementor-id="206"
                     class="elementor elementor-206 display-flex"
                   >
                     <section
                       class="elementor-section elementor-top-section elementor-element elementor-element-0d5cd56 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                       data-id="0d5cd56"
-                      data-element_type="section"
-                      data-settings='{"background_background":"classic"}'
                     >
                       <div class="elementor-background-overlay"></div>
                     </section>
@@ -4134,1925 +4123,1037 @@
                       class="elementor-section elementor-top-section elementor-element elementor-element-12c868ef elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                       data-id="12c868ef"
                     >
-                      <div class="elementor-background-overlay"></div>
                       <div class="elementor-container elementor-column-gap-no">
                         <div
                           class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6dbaba2e"
                           data-id="6dbaba2e"
-                          data-element_type="column"
                         >
                           <div
                             class="elementor-widget-wrap elementor-element-populated section-padding"
                           >
-                            <section
-                              class="elementor-section elementor-inner-section elementor-element elementor-element-48818834 elementor-section-content-bottom elementor-section-boxed elementor-section-height-default elementor-section-height-default section-padding"
-                              data-id="48818834"
-                              data-element_type="section"
-                            >
-                              <div
-                                class="elementor-container elementor-column-gap-no"
-                              >
-                                <div
-                                  class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-6103fdc5"
-                                  data-id="6103fdc5"
-                                  data-element_type="column"
-                                >
-                                  <div
-                                    class="elementor-widget-wrap elementor-element-populated"
-                                  >
-                                    <div
-                                      class="elementor-element elementor-element-2026783c elementor-widget elementor-widget-heading"
-                                      data-id="2026783c"
-                                      data-element_type="widget"
-                                      data-widget_type="heading.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <h2
-                                          class="elementor-heading-title elementor-size-default"
-                                        >
-                                          HELP STATION
-                                        </h2>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </section>
-                            <section
-                              class="elementor-section elementor-inner-section elementor-element elementor-element-75d5899f elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                              data-id="75d5899f"
-                              data-element_type="section"
-                            >
-                              <div
-                                class="elementor-container elementor-column-gap-default vertical-article"
-                              >
-                                <div
-                                  class="elementor-element elementor-element-e1f2579 elementor-widget elementor-widget-image"
-                                  data-id="e1f2579"
-                                  data-element_type="widget"
-                                  data-widget_type="image.default"
-                                >
-                                  <div
-                                    class="elementor-widget-container article-image"
-                                  >
-                                    <div class="min_read">8 min read</div>
-                                    <img
-                                      decoding="async"
-                                      width="650"
-                                      height="240"
-                                      src="img/glossary_article/main_pic.png"
-                                      class="attachment-large size-large wp-image-791"
-                                      alt=""
-                                      sizes="(max-width: 650px) 100vw, 650px"
-                                    />
-                                  </div>
-                                </div>
-
-                                <div
-                                  class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b1eae7d"
-                                  data-id="b1eae7d"
-                                  data-element_type="column"
-                                >
-                                  <div
-                                    class="elementor-widget-wrap elementor-element-populated"
-                                  >
-                                    <div
-                                      class="elementor-element elementor-element-0b94bb4 elementor-widget elementor-widget-heading"
-                                      data-id="0b94bb4"
-                                      data-element_type="widget"
-                                      data-widget_type="heading.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <h5
-                                          class="elementor-heading-title elementor-size-default"
-                                        >
-                                          Affiliate Marketing Lingo 101: A
-                                          Glossary for Media Buyers
-                                        </h5>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-container elementor-column-gap-default tag-column"
-                                    >
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="main_tag tag tag-block"
-                                                  >
-                                                    affiliates
-                                                  </a>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="tag tag-block"
-                                                  >
-                                                    guide</a
-                                                  >
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-2dfc1c6 elementor-widget elementor-widget-text-editor"
-                                      data-id="2dfc1c6"
-                                      data-element_type="widget"
-                                      data-widget_type="text-editor.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <p>
-                                          Your go-to dictionary in affiliate
-                                          marketing world. Speak the industry's
-                                          language!
-                                        </p>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-b94b459 elementor-widget elementor-widget-button"
-                                      data-id="b94b459"
-                                      data-element_type="widget"
-                                      data-widget_type="button.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <div class="elementor-button-wrapper">
-                                          <a
-                                            class="black-button elementor-button elementor-button-link elementor-size-sm"
-                                            href="glossary.html"
-                                          >
-                                            <span
-                                              class="elementor-button-content-wrapper"
-                                            >
-                                              <span
-                                                class="elementor-button-text"
-                                                >Read more</span
-                                              >
-                                            </span>
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div
-                                class="elementor-container elementor-column-gap-default vertical-article"
-                              >
-                                <div
-                                  class="elementor-element elementor-element-e1f2579 elementor-widget elementor-widget-image"
-                                  data-id="e1f2579"
-                                  data-element_type="widget"
-                                  data-widget_type="image.default"
-                                >
-                                  <div
-                                    class="elementor-widget-container article-image"
-                                  >
-                                    <div class="min_read">4 min read</div>
-                                    <img
-                                      decoding="async"
-                                      width="650"
-                                      height="240"
-                                      src="img/guides_article/main_pic.png"
-                                      class="attachment-large size-large wp-image-791"
-                                      alt=""
-                                      sizes="(max-width: 650px) 100vw, 650px"
-                                    />
-                                  </div>
-                                </div>
-
-                                <div
-                                  class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b1eae7d"
-                                  data-id="b1eae7d"
-                                  data-element_type="column"
-                                >
-                                  <div
-                                    class="elementor-widget-wrap elementor-element-populated"
-                                  >
-                                    <div
-                                      class="elementor-element elementor-element-0b94bb4 elementor-widget elementor-widget-heading"
-                                      data-id="0b94bb4"
-                                      data-element_type="widget"
-                                      data-widget_type="heading.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <h5
-                                          class="elementor-heading-title elementor-size-default"
-                                        >
-                                          In-depth Affiliate Marketing with
-                                          Adavice! Useful Info on Traffic
-                                        </h5>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-container elementor-column-gap-default tag-column"
-                                    >
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="main_tag tag tag-block"
-                                                  >
-                                                    affiliates
-                                                  </a>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="tag tag-block"
-                                                  >
-                                                    guide</a
-                                                  >
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-2dfc1c6 elementor-widget elementor-widget-text-editor"
-                                      data-id="2dfc1c6"
-                                      data-element_type="widget"
-                                      data-widget_type="text-editor.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <p>
-                                          Just starting in affiliate marketing?
-                                          Check out this easy in-depth guide on
-                                          launching your first campaign!
-                                        </p>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-b94b459 elementor-widget elementor-widget-button"
-                                      data-id="b94b459"
-                                      data-element_type="widget"
-                                      data-widget_type="button.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <div class="elementor-button-wrapper">
-                                          <a
-                                            class="black-button elementor-button elementor-button-link elementor-size-sm"
-                                            href="guides.html"
-                                          >
-                                            <span
-                                              class="elementor-button-content-wrapper"
-                                            >
-                                              <span
-                                                class="elementor-button-text"
-                                                >Read more</span
-                                              >
-                                            </span>
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div
-                                class="elementor-container elementor-column-gap-default vertical-article"
-                              >
-                                <div
-                                  class="elementor-element elementor-element-e1f2579 elementor-widget elementor-widget-image"
-                                  data-id="e1f2579"
-                                  data-element_type="widget"
-                                  data-widget_type="image.default"
-                                >
-                                  <div
-                                    class="elementor-widget-container article-image"
-                                  >
-                                    <div class="min_read">5 min read</div>
-                                    <img
-                                      decoding="async"
-                                      width="650"
-                                      height="240"
-                                      src="img/solutions_article/main_pic.png"
-                                      class="attachment-large size-large wp-image-791"
-                                      alt=""
-                                      sizes="(max-width: 650px) 100vw, 650px"
-                                    />
-                                  </div>
-                                </div>
-
-                                <div
-                                  class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b1eae7d"
-                                  data-id="b1eae7d"
-                                  data-element_type="column"
-                                >
-                                  <div
-                                    class="elementor-widget-wrap elementor-element-populated"
-                                  >
-                                    <div
-                                      class="elementor-element elementor-element-0b94bb4 elementor-widget elementor-widget-heading"
-                                      data-id="0b94bb4"
-                                      data-element_type="widget"
-                                      data-widget_type="heading.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <h5
-                                          class="elementor-heading-title elementor-size-default"
-                                        >
-                                          No Tracking, No Lacking: The Best
-                                          Optimization Solutions
-                                        </h5>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-container elementor-column-gap-default tag-column"
-                                    >
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="main_tag tag tag-block"
-                                                  >
-                                                    optimization
-                                                  </a>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="tag tag-block"
-                                                  >
-                                                    testing</a
-                                                  >
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-2dfc1c6 elementor-widget elementor-widget-text-editor"
-                                      data-id="2dfc1c6"
-                                      data-element_type="widget"
-                                      data-widget_type="text-editor.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <p>
-                                          Optimization strategies without
-                                          tracking: how to start and easily run
-                                          a campaign.
-                                        </p>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-b94b459 elementor-widget elementor-widget-button"
-                                      data-id="b94b459"
-                                      data-element_type="widget"
-                                      data-widget_type="button.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <div class="elementor-button-wrapper">
-                                          <a
-                                            class="black-button elementor-button elementor-button-link elementor-size-sm"
-                                            href="solutions.html"
-                                          >
-                                            <span
-                                              class="elementor-button-content-wrapper"
-                                            >
-                                              <span
-                                                class="elementor-button-text"
-                                                >Read more</span
-                                              >
-                                            </span>
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div
-                                class="elementor-container elementor-column-gap-default vertical-article"
-                              >
-                                <div
-                                  class="elementor-element elementor-element-e1f2579 elementor-widget elementor-widget-image"
-                                  data-id="e1f2579"
-                                  data-element_type="widget"
-                                  data-widget_type="image.default"
-                                >
-                                  <div
-                                    class="elementor-widget-container article-image"
-                                  >
-                                    <div class="min_read">3 min read</div>
-                                    <img
-                                      decoding="async"
-                                      width="650"
-                                      height="240"
-                                      src="img/optimization_article/main_pic.png"
-                                      class="attachment-large size-large wp-image-791"
-                                      alt=""
-                                      sizes="(max-width: 650px) 100vw, 650px"
-                                    />
-                                  </div>
-                                </div>
-
-                                <div
-                                  class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b1eae7d"
-                                  data-id="b1eae7d"
-                                  data-element_type="column"
-                                >
-                                  <div
-                                    class="elementor-widget-wrap elementor-element-populated"
-                                  >
-                                    <div
-                                      class="elementor-element elementor-element-0b94bb4 elementor-widget elementor-widget-heading"
-                                      data-id="0b94bb4"
-                                      data-element_type="widget"
-                                      data-widget_type="heading.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <h5
-                                          class="elementor-heading-title elementor-size-default"
-                                        >
-                                          Beginner-friendly Optimization Tricks:
-                                          How to Easily Improve the Results
-                                        </h5>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-container elementor-column-gap-default tag-column"
-                                    >
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="main_tag tag tag-block"
-                                                  >
-                                                    optimization
-                                                  </a>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="tag tag-block"
-                                                  >
-                                                    testing</a
-                                                  >
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-2dfc1c6 elementor-widget elementor-widget-text-editor"
-                                      data-id="2dfc1c6"
-                                      data-element_type="widget"
-                                      data-widget_type="text-editor.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <p>
-                                          The easiest 2 optimization methods for
-                                          your campaign based on ad creatives
-                                          and other main settings.
-                                        </p>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-b94b459 elementor-widget elementor-widget-button"
-                                      data-id="b94b459"
-                                      data-element_type="widget"
-                                      data-widget_type="button.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <div class="elementor-button-wrapper">
-                                          <a
-                                            class="black-button elementor-button elementor-button-link elementor-size-sm"
-                                            href="optimization.html"
-                                          >
-                                            <span
-                                              class="elementor-button-content-wrapper"
-                                            >
-                                              <span
-                                                class="elementor-button-text"
-                                                >Read more</span
-                                              >
-                                            </span>
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div
-                                class="elementor-container elementor-column-gap-default vertical-article"
-                              >
-                                <div
-                                  class="elementor-element elementor-element-e1f2579 elementor-widget elementor-widget-image"
-                                  data-id="e1f2579"
-                                  data-element_type="widget"
-                                  data-widget_type="image.default"
-                                >
-                                  <div
-                                    class="elementor-widget-container article-image"
-                                  >
-                                    <div class="min_read">3 min read</div>
-                                    <img
-                                      decoding="async"
-                                      width="650"
-                                      height="240"
-                                      src="img/launching_article/main_pic.png"
-                                      class="attachment-large size-large wp-image-791"
-                                      alt=""
-                                      sizes="(max-width: 650px) 100vw, 650px"
-                                    />
-                                  </div>
-                                </div>
-
-                                <div
-                                  class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b1eae7d"
-                                  data-id="b1eae7d"
-                                  data-element_type="column"
-                                >
-                                  <div
-                                    class="elementor-widget-wrap elementor-element-populated"
-                                  >
-                                    <div
-                                      class="elementor-element elementor-element-0b94bb4 elementor-widget elementor-widget-heading"
-                                      data-id="0b94bb4"
-                                      data-element_type="widget"
-                                      data-widget_type="heading.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <h5
-                                          class="elementor-heading-title elementor-size-default"
-                                        >
-                                          FAQ: Successful Launching on Adavice
-                                          DSP
-                                        </h5>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-container elementor-column-gap-default tag-column"
-                                    >
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="main_tag tag tag-block"
-                                                  >
-                                                    dsp
-                                                  </a>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="tag tag-block"
-                                                  >
-                                                    guide</a
-                                                  >
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-2dfc1c6 elementor-widget elementor-widget-text-editor"
-                                      data-id="2dfc1c6"
-                                      data-element_type="widget"
-                                      data-widget_type="text-editor.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <p>
-                                          We’ve collected &amp; answered the
-                                          most popular questions for all Adavice
-                                          DSP newcomers! Check it out for an
-                                          easy start :)
-                                        </p>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-b94b459 elementor-widget elementor-widget-button"
-                                      data-id="b94b459"
-                                      data-element_type="widget"
-                                      data-widget_type="button.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <div class="elementor-button-wrapper">
-                                          <a
-                                            class="black-button elementor-button elementor-button-link elementor-size-sm"
-                                            href="launching.html"
-                                          >
-                                            <span
-                                              class="elementor-button-content-wrapper"
-                                            >
-                                              <span
-                                                class="elementor-button-text"
-                                                >Read more</span
-                                              >
-                                            </span>
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div
-                                class="elementor-container elementor-column-gap-default vertical-article"
-                              >
-                                <div
-                                  class="elementor-element elementor-element-e1f2579 elementor-widget elementor-widget-image"
-                                  data-id="e1f2579"
-                                  data-element_type="widget"
-                                  data-widget_type="image.default"
-                                >
-                                  <div
-                                    class="elementor-widget-container article-image"
-                                  >
-                                    <div class="min_read">2 min read</div>
-                                    <img
-                                      decoding="async"
-                                      width="650"
-                                      height="240"
-                                      src="img/auto_optimization_article/MAIN.png"
-                                      class="attachment-large size-large wp-image-791"
-                                      alt=""
-                                      sizes="(max-width: 650px) 100vw, 650px"
-                                    />
-                                  </div>
-                                </div>
-
-                                <div
-                                  class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b1eae7d"
-                                  data-id="b1eae7d"
-                                  data-element_type="column"
-                                >
-                                  <div
-                                    class="elementor-widget-wrap elementor-element-populated"
-                                  >
-                                    <div
-                                      class="elementor-element elementor-element-0b94bb4 elementor-widget elementor-widget-heading"
-                                      data-id="0b94bb4"
-                                      data-element_type="widget"
-                                      data-widget_type="heading.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <h5
-                                          class="elementor-heading-title elementor-size-default"
-                                        >
-                                          Auto-Optimization Feature - Full Guide
-                                        </h5>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-container elementor-column-gap-default tag-column"
-                                    >
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="main_tag tag tag-block"
-                                                  >
-                                                    optimization
-                                                  </a>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="tag tag-block"
-                                                  >
-                                                    feature</a
-                                                  >
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-2dfc1c6 elementor-widget elementor-widget-text-editor"
-                                      data-id="2dfc1c6"
-                                      data-element_type="widget"
-                                      data-widget_type="text-editor.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <p>
-                                          What is Auto-Optimization and how to
-                                          use its advantages to improve your
-                                          campaign’s performance.
-                                        </p>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-b94b459 elementor-widget elementor-widget-button"
-                                      data-id="b94b459"
-                                      data-element_type="widget"
-                                      data-widget_type="button.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <div class="elementor-button-wrapper">
-                                          <a
-                                            class="black-button elementor-button elementor-button-link elementor-size-sm"
-                                            href="auto_optimization.html"
-                                          >
-                                            <span
-                                              class="elementor-button-content-wrapper"
-                                            >
-                                              <span
-                                                class="elementor-button-text"
-                                                >Read more</span
-                                              >
-                                            </span>
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div
-                                class="elementor-container elementor-column-gap-default vertical-article"
-                              >
-                                <div
-                                  class="elementor-element elementor-element-e1f2579 elementor-widget elementor-widget-image"
-                                  data-id="e1f2579"
-                                  data-element_type="widget"
-                                  data-widget_type="image.default"
-                                >
-                                  <div
-                                    class="elementor-widget-container article-image"
-                                  >
-                                    <div class="min_read">4 min read</div>
-                                    <img
-                                      decoding="async"
-                                      width="650"
-                                      height="240"
-                                      src="img/bids_article/BIDS.png"
-                                      class="attachment-large size-large wp-image-791"
-                                      alt=""
-                                      sizes="(max-width: 650px) 100vw, 650px"
-                                    />
-                                  </div>
-                                </div>
-
-                                <div
-                                  class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b1eae7d"
-                                  data-id="b1eae7d"
-                                  data-element_type="column"
-                                >
-                                  <div
-                                    class="elementor-widget-wrap elementor-element-populated"
-                                  >
-                                    <div
-                                      class="elementor-element elementor-element-0b94bb4 elementor-widget elementor-widget-heading"
-                                      data-id="0b94bb4"
-                                      data-element_type="widget"
-                                      data-widget_type="heading.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <h5
-                                          class="elementor-heading-title elementor-size-default"
-                                        >
-                                          Bids and Pricing: All You Need to Know
-                                          to Run Successful Campaigns
-                                        </h5>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-container elementor-column-gap-default tag-column"
-                                    >
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="main_tag tag tag-block"
-                                                  >
-                                                    bids
-                                                  </a>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="tag tag-block"
-                                                  >
-                                                    rates</a
-                                                  >
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-2dfc1c6 elementor-widget elementor-widget-text-editor"
-                                      data-id="2dfc1c6"
-                                      data-element_type="widget"
-                                      data-widget_type="text-editor.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <p>
-                                          Understand how bids work, what are the
-                                          minimum rates you can set, and how you
-                                          can get traffic from more expensive
-                                          sources fitting your target pricing.
-                                        </p>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-b94b459 elementor-widget elementor-widget-button"
-                                      data-id="b94b459"
-                                      data-element_type="widget"
-                                      data-widget_type="button.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <div class="elementor-button-wrapper">
-                                          <a
-                                            class="black-button elementor-button elementor-button-link elementor-size-sm"
-                                            href="bids.html"
-                                          >
-                                            <span
-                                              class="elementor-button-content-wrapper"
-                                            >
-                                              <span
-                                                class="elementor-button-text"
-                                                >Read more</span
-                                              >
-                                            </span>
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div
-                                class="elementor-container elementor-column-gap-default vertical-article"
-                              >
-                                <div
-                                  class="elementor-element elementor-element-e1f2579 elementor-widget elementor-widget-image"
-                                  data-id="e1f2579"
-                                  data-element_type="widget"
-                                  data-widget_type="image.default"
-                                >
-                                  <div
-                                    class="elementor-widget-container article-image"
-                                  >
-                                    <div class="min_read">4 min read</div>
-                                    <img
-                                      decoding="async"
-                                      width="650"
-                                      height="240"
-                                      src="img/vertical_article/cover.png"
-                                      class="attachment-large size-large wp-image-791"
-                                      alt=""
-                                      sizes="(max-width: 650px) 100vw, 650px"
-                                    />
-                                  </div>
-                                </div>
-
-                                <div
-                                  class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b1eae7d"
-                                  data-id="b1eae7d"
-                                  data-element_type="column"
-                                >
-                                  <div
-                                    class="elementor-widget-wrap elementor-element-populated"
-                                  >
-                                    <div
-                                      class="elementor-element elementor-element-0b94bb4 elementor-widget elementor-widget-heading"
-                                      data-id="0b94bb4"
-                                      data-element_type="widget"
-                                      data-widget_type="heading.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <h5
-                                          class="elementor-heading-title elementor-size-default"
-                                        >
-                                          Quick and Easy Guide to the Wondrous
-                                          World of Verticals in Marketing
-                                        </h5>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-container elementor-column-gap-default tag-column"
-                                    >
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="main_tag tag tag-block"
-                                                  >
-                                                    verticals
-                                                  </a>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="tag tag-block"
-                                                  >
-                                                    guide</a
-                                                  >
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-2dfc1c6 elementor-widget elementor-widget-text-editor"
-                                      data-id="2dfc1c6"
-                                      data-element_type="widget"
-                                      data-widget_type="text-editor.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <p>
-                                          Are you a beginner in affiliate
-                                          marketing or looking to freshen up
-                                          your knowledge? Find out about the
-                                          most popular verticals - what they are
-                                          and nuances.
-                                        </p>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-b94b459 elementor-widget elementor-widget-button"
-                                      data-id="b94b459"
-                                      data-element_type="widget"
-                                      data-widget_type="button.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <div class="elementor-button-wrapper">
-                                          <a
-                                            class="black-button elementor-button elementor-button-link elementor-size-sm"
-                                            href="vertical.html"
-                                          >
-                                            <span
-                                              class="elementor-button-content-wrapper"
-                                            >
-                                              <span
-                                                class="elementor-button-text"
-                                                >Read more</span
-                                              >
-                                            </span>
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div
-                                class="elementor-container elementor-column-gap-default vertical-article"
-                              >
-                                <div
-                                  class="elementor-element elementor-element-e1f2579 elementor-widget elementor-widget-image"
-                                  data-id="e1f2579"
-                                  data-element_type="widget"
-                                  data-widget_type="image.default"
-                                >
-                                  <div
-                                    class="elementor-widget-container article-image"
-                                  >
-                                    <div class="min_read">3 min read</div>
-                                    <img
-                                      decoding="async"
-                                      width="650"
-                                      height="240"
-                                      src="img/bidding_article/pic.png"
-                                      class="attachment-large size-large wp-image-791"
-                                      alt=""
-                                      sizes="(max-width: 650px) 100vw, 650px"
-                                    />
-                                  </div>
-                                </div>
-
-                                <div
-                                  class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b1eae7d"
-                                  data-id="b1eae7d"
-                                  data-element_type="column"
-                                >
-                                  <div
-                                    class="elementor-widget-wrap elementor-element-populated"
-                                  >
-                                    <div
-                                      class="elementor-element elementor-element-0b94bb4 elementor-widget elementor-widget-heading"
-                                      data-id="0b94bb4"
-                                      data-element_type="widget"
-                                      data-widget_type="heading.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <h5
-                                          class="elementor-heading-title elementor-size-default"
-                                        >
-                                          Micro Bidding - How to Set Price per
-                                          Targeted Segment
-                                        </h5>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-container elementor-column-gap-default tag-column"
-                                    >
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="main_tag tag tag-block"
-                                                  >
-                                                    microbidding
-                                                  </a>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="tag tag-block"
-                                                  >
-                                                    bids</a
-                                                  >
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-2dfc1c6 elementor-widget elementor-widget-text-editor"
-                                      data-id="2dfc1c6"
-                                      data-element_type="widget"
-                                      data-widget_type="text-editor.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <p>
-                                          Understand how Micro Bidding works and
-                                          how to set it up for absolute
-                                          optimization.
-                                        </p>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-b94b459 elementor-widget elementor-widget-button"
-                                      data-id="b94b459"
-                                      data-element_type="widget"
-                                      data-widget_type="button.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <div class="elementor-button-wrapper">
-                                          <a
-                                            class="black-button elementor-button elementor-button-link elementor-size-sm"
-                                            href="bidding.html"
-                                          >
-                                            <span
-                                              class="elementor-button-content-wrapper"
-                                            >
-                                              <span
-                                                class="elementor-button-text"
-                                                >Read more</span
-                                              >
-                                            </span>
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div
-                                class="elementor-container elementor-column-gap-default vertical-article"
-                              >
-                                <div
-                                  class="elementor-element elementor-element-e1f2579 elementor-widget elementor-widget-image"
-                                  data-id="e1f2579"
-                                  data-element_type="widget"
-                                  data-widget_type="image.default"
-                                >
-                                  <div
-                                    class="elementor-widget-container article-image"
-                                  >
-                                    <div class="min_read">1 min read</div>
-                                    <img
-                                      decoding="async"
-                                      width="650"
-                                      height="240"
-                                      src="img/parameters_article/tracking-3.jpg"
-                                      class="attachment-large size-large wp-image-791"
-                                      alt=""
-                                      sizes="(max-width: 650px) 100vw, 650px"
-                                    />
-                                  </div>
-                                </div>
-
-                                <div
-                                  class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b1eae7d"
-                                  data-id="b1eae7d"
-                                  data-element_type="column"
-                                >
-                                  <div
-                                    class="elementor-widget-wrap elementor-element-populated"
-                                  >
-                                    <div
-                                      class="elementor-element elementor-element-0b94bb4 elementor-widget elementor-widget-heading"
-                                      data-id="0b94bb4"
-                                      data-element_type="widget"
-                                      data-widget_type="heading.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <h5
-                                          class="elementor-heading-title elementor-size-default"
-                                        >
-                                          Tracking Parameters
-                                        </h5>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-container elementor-column-gap-default tag-column"
-                                    >
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="main_tag tag tag-block"
-                                                  >
-                                                  tracking
-                                                  </a>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-
-                                      <div
-                                        class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95"
-                                        data-id="1d5f3b95"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-widget-wrap elementor-element-populated"
-                                        >
-                                          <div
-                                            class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
-                                            data-id="292afc3d"
-                                            data-element_type="widget"
-                                            data-widget_type="icon-box.default"
-                                          >
-                                            <div
-                                              class="elementor-widget-container"
-                                            >
-                                              <div
-                                                class="elementor-icon-box-wrapper"
-                                              >
-                                                <div
-                                                  class="elementor-icon-box-content"
-                                                >
-                                                  <a
-                                                    href="#"
-                                                    class="tag tag-block"
-                                                  >
-                                                  tracking parameters</a
-                                                  >
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-2dfc1c6 elementor-widget elementor-widget-text-editor"
-                                      data-id="2dfc1c6"
-                                      data-element_type="widget"
-                                      data-widget_type="text-editor.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <p>
-                                          Find available tracking parameters/tokens for setting up integration with AdaviceDSP and
-                                          receiving detailed statistics.
-                                        </p>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="elementor-element elementor-element-b94b459 elementor-widget elementor-widget-button"
-                                      data-id="b94b459"
-                                      data-element_type="widget"
-                                      data-widget_type="button.default"
-                                    >
-                                      <div class="elementor-widget-container">
-                                        <div class="elementor-button-wrapper">
-                                          <a
-                                            class="black-button elementor-button elementor-button-link elementor-size-sm"
-                                            href="parameters.html"
-                                          >
-                                            <span
-                                              class="elementor-button-content-wrapper"
-                                            >
-                                              <span
-                                                class="elementor-button-text"
-                                                >Read more</span
-                                              >
-                                            </span>
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </section>
-                          </div>
+                <div class="text_block">
+                    <div class="article_block_left first_version">
+                        <div class="subscribe_container">
+                            <div class="_form_7"></div>
+                            <script src="https://adavice.activehosted.com/f/embed.php?id=7" type="text/javascript"
+                                charset="utf-8"></script>
                         </div>
-                      </div>
-                    </section>
-                  </div>
+                        <div class="tag_container">
+                            <div class="article_tag">
+                                <a href="#" class="main_tag tag tag-block">affiliates</a>
+                                <a href="#" class="main_tag tag tag-block">guide</a>
+                                <a href="#" class="main_tag tag tag-block">start guide</a>
+                                <a href="#" class="main_tag tag tag-block">platform</a>
+                                <a href="#" class="main_tag tag tag-block">dsp</a>
+                                <a href="#" class="main_tag tag tag-block">launching</a>
+                                <a href="#" class="main_tag tag tag-block">tips</a>
+                                <a href="#" class="tag tag-block">ads</a>
+                                <a href="#" class="tag tag-block">ad formats</a>
+                                <a href="#" class="tag tag-block">ad types</a>
+                                <a href="#" class="tag tag-block">betting</a>
+                                <a href="#" class="tag tag-block">bids</a>
+                                <a href="#" class="tag tag-block">black friday</a>
+                                <a href="#" class="tag tag-block">blacklist</a>
+                                <a href="#" class="tag tag-block">bonus</a>
+
+                                <a class="see_more"> See more</a>
+
+                                <a href="#" class="tag more_tags tag-block">calendar</a>
+                                <a href="#" class="tag more_tags tag-block">christmas</a>
+                                <a href="#" class="tag more_tags tag-block">classic push</a>
+                                <a href="#" class="tag more_tags tag-block">cpc</a>
+                                <a href="#" class="tag more_tags tag-block">cpm</a>
+                                <a href="#" class="tag more_tags tag-block">creatives</a>
+                                <a href="#" class="tag more_tags tag-block">crypto</a>
+                                <a href="#" class="tag more_tags tag-block">dating</a>
+                                <a href="#" class="tag more_tags tag-block">direct click</a>
+                                <a href="#" class="tag more_tags tag-block">domain traffic</a>
+                                <a href="#" class="tag more_tags tag-block">downloads</a>
+                                <a href="#" class="tag more_tags tag-block">finance</a>
+                                <a href="#" class="tag more_tags tag-block">gambling</a>
+                                <a href="#" class="tag more_tags tag-block">halloween</a>
+                                <a href="#" class="tag more_tags tag-block">holidays</a>
+                                <a href="#" class="tag more_tags tag-block">inpage</a>
+                                <a href="#" class="tag more_tags tag-block">image pixel</a>
+                                <a href="#" class="tag more_tags tag-block">microbidding</a>
+                                <a href="#" class="tag more_tags tag-block">nutra</a>
+                                <a href="#" class="tag more_tags tag-block">optimization</a>
+                                <a href="#" class="tag more_tags tag-block">partners</a>
+                                <a href="#" class="tag more_tags tag-block">pixel</a>
+                                <a href="#" class="tag more_tags tag-block">platform</a>
+                                <a href="#" class="tag more_tags tag-block">pop</a>
+                                <a href="#" class="tag more_tags tag-block">pops</a>
+                                <a href="#" class="tag more_tags tag-block">pop-under</a>
+                                <a href="#" class="tag more_tags tag-block">pop-up</a>
+                                <a href="#" class="tag more_tags tag-block">postback</a>
+                                <a href="#" class="tag more_tags tag-block">pricing</a>
+                                <a href="#" class="tag more_tags tag-block">promo</a>
+                                <a href="#" class="tag more_tags tag-block">push</a>
+                                <a href="#" class="tag more_tags tag-block">rates</a>
+                                <a href="#" class="tag more_tags tag-block">rtb</a>
+                                <a href="#" class="tag more_tags tag-block">service</a>
+                                <a href="#" class="tag more_tags tag-block">smart cpc</a>
+                                <a href="#" class="tag more_tags tag-block">smart cpm</a>
+                                <a href="#" class="tag more_tags tag-block">sport betting</a>
+                                <a href="#" class="tag more_tags tag-block">start guide</a>
+                                <a href="#" class="tag more_tags tag-block">sweepstakes</a>
+                                <a href="#" class="tag more_tags tag-block">testing</a>
+                                <a href="#" class="tag more_tags tag-block">tracking</a>
+                                <a href="#" class="tag more_tags tag-block">tracking parameters</a>
+                                <a href="#" class="tag more_tags tag-block">tracking platforms</a>
+                                <a href="#" class="tag more_tags tag-block">tutorial</a>
+                                <a href="#" class="tag more_tags tag-block">verticals</a>
+                                <a href="#" class="tag more_tags tag-block">vpn</a>
+                                <a href="#" class="tag more_tags tag-block">whitelist</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article_block_right">
+                        <div class="article_image first_version">
+                            <img src="img/glossary_article/main_pic.png" class="main_inner inner_image"
+                                alt="Glossary" />
+                        </div>
+                        <div class="article_block">
+                            <h1>Affiliate Marketing Lingo 101: A Glossary for Media Buyers</h1>
+                            <div class="article_tag">
+                                <a href="#" class="main_tag tag tag-block">affiliates</a>
+                                <a href="#" class="main_tag tag tag-block">guide</a>
+                                <a href="#" class="tag tag-block">start guide</a>
+                                <a href="#" class="tag tag-block">platform</a>
+                                <a href="#" class="tag tag-block">dsp</a>
+                                <a href="#" class="tag tag-block">launching</a>
+                                <a href="#" class="tag tag-block">tips</a>
+                            </div>
+                            <div class="article_text">
+                                <p class="description">
+                                    Your go-to dictionary in affiliate marketing world. Speak the industry's language!
+                                </p>
+                            </div>
+                        </div>
+
+                        <h3>A/B Test</h3>
+                        <p>Also known as “Split testing”. This is when you test two or more different variations of
+                            creatives, landing pages, campaign settings (time, day, etc) to find the one that earns more
+                            money for you.</p>
+
+                        <h3>Above The Fold</h3>
+                        <p>Any area of a web page that is viewable without the viewer having to use the vertical scroll
+                            bar.</p>
+
+                        <h3>Ad (Placement)</h3>
+                        <p>The space on a web page reserved for the displaying of advertisements. For banner ads:
+                            typically
+                            at the top or bottom of a page or if a small advertisement in the right or left column. The
+                            most
+                            desirable ad is above the fold.</p>
+
+                        <h3>Ad Exchange</h3>
+                        <p>A digital marketplace that facilitates the buying and selling of online advertising space. It
+                            allows advertisers to bid in real-time for ad placements across a network of websites or
+                            apps,
+                            while publishers can offer their ad inventory for sale.</p>
+
+                        <h3>Ad Network</h3>
+                        <p>Ad networks connect Advertisers to Websites (Publisher) through an Ad Server delivering
+                            advertisements to internet users, which enables targeting, tracking and reporting of
+                            impressions.</p>
+
+                        <h3>Ad Server</h3>
+                        <p>Computer system which stores maintains and uploads advertising banners for one or more
+                            websites.
+                            Use of a third party ad server helps establish trust between an advertiser and publisher
+                            since
+                            the statistics are maintained by an objective third party.</p>
+
+                        <h3>Advertiser</h3>
+                        <p>An advertiser is an individual or company that promotes products, services, or brands through
+                            various advertising channels to reach and engage with potential customers.</p>
+
+                        <h3>Affiliate Link</h3>
+                        <p>A unique URL assigned to an affiliate by advertiser. Affiliate links are used to track and
+                            compensate affiliates for their promotional efforts in driving traffic and sales to the
+                            advertiser's website or products.</p>
+
+                        <h3>Affiliate Manager</h3>
+                        <p>Affiliate manager provides resources, track performance, and optimize the advertising
+                            campaign
+                            for success.</p>
+
+                        <h3>Affiliate Marketing</h3>
+                        <p>Affiliate marketing is a performance-based marketing strategy where affiliates (individuals
+                            or
+                            companies) earn commissions by promoting products or services of other businesses.</p>
+
+                        <h3>APK</h3>
+                        <p>The APK extension stands for Android Package Kit and is the file format used for installing
+                            Android applications.</p>
+
+                        <h3>Auto-Download Offers</h3>
+                        <p>Once the final user clicks the creative, the content is automatically downloaded without his
+                            consent. These offers usually are forbidden.</p>
+
+                        <h3>Blacklist</h3>
+                        <p>If you have a RON campaign but you realize you need to stop buying traffic from unprofitable
+                            spots, you’ll create a filter – Black List (BL) – containing those “bad”
+                            websites/placements.</p>
+
+                        <h3>Bot Traffic</h3>
+                        <p>Bot traffic describes any non-human traffic to a website or an app. The term bot traffic
+                            often
+                            carries negative feelings, but in reality, bot traffic isn't necessarily good or bad; it all
+                            depends on the purpose of the bots.</p>
+
+                        <h3>Bid</h3>
+                        <p>A dealer's or another potential buyer's bid price is the amount they are willing to spend.
+                            Here,
+                            media buyers and advertisers decide the highest price they are ready to accept for a
+                            specific
+                            traffic volume.</p>
+
+                        <h3>Click ID</h3>
+                        <p>A unique code assigned to each click on an affiliate link or advertisement, allowing tracking
+                            of
+                            user behavior.</p>
+
+                        <h3>Click-Through Rate</h3>
+                        <p>The percentage of impressions that resulted in a click through. Calculated by dividing the
+                            number of clicks by the number of impressions (CTR=Clicks/Impression).</p>
+
+                        <h3>Conversion</h3>
+                        <p>Term used to describe the process of getting a web visitor to accept an offer or become a
+                            paying
+                            customer. Advertisers strive for high conversion ratios.</p>
+
+                        <h3>Conversion Rate</h3>
+                        <p>onversions divided by clicks, expressed as a %.</p>
+
+                        <h3>CPA – Cost Per Action</h3>
+                        <p>Affiliate is paid only for an action performed by the user on the offer - which can be a
+                            sale, lead, subscription, etc.</p>
+
+                        <h3>CPC – Cost Per Click</h3>
+                        <p>Affiliate pays to the advertising network for every click you receive from it.</p>
+
+                        <h3>CPL – Cost Per Lead</h3>
+                        <p>The Advertiser or the affiliate network pays you CPL price every time when the visitor sent
+                            by you fills a form with personal data – e-mail, name, phone, etc.</p>
+
+
+                        <h3>CPM – Cost Per Mile (Thousand Impressions)</h3>
+                        <p>A pricing model where the cost is calculated per thousand impressions of an ad. If the CPM
+                            rate
+                            is $1, it means you pay $1 each time your ad is viewed 1,000 times.</p>
+
+                        <h3>CPS - Cost Per Sale</h3>
+                        <p>A payment model where you earn a commission only when a visitor referred through your
+                            affiliate
+                            link makes a purchase.</p>
+
+                        <h3>CPV – Cost Per View</h3>
+                        <p>A pricing model where you pay each time a user views your ad, such as a landing page, often
+                            used
+                            for pop traffic or redirect traffic.</p>
+
+                        <h3>Creative</h3>
+                        <p>A term for various promotional tools to draw user interest. These can be banners, landing
+                            pages,
+                            emails, short videos, and other formats.</p>
+
+                        <h3>Daily Budget</h3>
+                        <p>When launching a paid advertising campaign, you can set a daily spending limit. Once this
+                            limit
+                            is hit, the campaign stops and restarts the next day. This helps new media buyers manage
+                            their
+                            budget. Always use it for new campaigns!</p>
+
+                        <h3>Dayparting</h3>
+                        <p>Allows you to target specific days and times for your ad campaigns. However, most affiliates
+                            initially run their campaigns 24/7 for a week or two to gather data. Once enough data is
+                            collected, they begin optimizing with dayparting to focus on the most effective hours and
+                            days.
+                            If you plan to use dayparting, always ensure you're using a tracker to make data-driven
+                            decisions.</p>
+
+                        <h3>Demand-Side Platforms (DSPs)</h3>
+                        <p>Systems that enable advertisers and media buyers to manage multiple ad exchanges through a
+                            single interface.Not recommended for new media buyers due to their complexity.</p>
+
+                        <h3>Double Opt-In (DOI)</h3>
+                        <p>Refers to a subscription process where the subscriber must confirm their interest in the
+                            subscription. This typically results in higher-quality leads, as users explicitly indicate
+                            their
+                            interest in the offer. The process flow:</p>
+                        <p>1.&nbsp;<b>1st Confirmation:</b> The user submits their personal details.<br />
+                            2.&nbsp;<b>2nd Confirmation:</b> The user clicks a link sent via email to finalize their
+                            subscription.<br />
+                            3.&nbsp;<b>Subscription:</b> The user is officially subscribed.</p>
+
+                        <h3>Dynamic Tracking</h3>
+                        <p>Essential for media buyers! Most traffic sources provide a variety of tracking tokens
+                            (macros)
+                            that can be incorporated into your offer's link. This allows you to collect comprehensive
+                            data,
+                            including information such as the user's country, city, operating system, OS version, device
+                            type, and browser used.</p>
+
+                        <h3>Earnings Per Click</h3>
+                        <p>Earnings Per Click (EPC) is one of the most important metrics in affiliate marketing. It
+                            means
+                            how much money you can earn from every 100 clicks on your ad. How to calculate it? Take your
+                            total earnings for a campaign (let’s say $240), divide this amount by the number of clicks
+                            received (let’s say 1200 clicks), and multiply by 100. 240/1200=0.2*100=20. In our example,
+                            EPC
+                            is 20 or in other words, we will receive $20 for every 100 clicks.</p>
+
+                        <h3>Fired Pixel</h3>
+                        <p>A "fired pixel" in affiliate marketing means that a Click ID has been created. This Click ID
+                            tracks what users do. A pixel can also fire when a conversion happens, like when someone
+                            signs
+                            up, makes a purchase, or subscribes. For more information, check the Click ID section.</p>
+
+                        <h3>Frequency Capping</h3>
+                        <p>Frequency capping controls how many times a user sees the same ad within a certain time
+                            frame,
+                            usually 24 hours. For example, if your frequency cap is set to 1/24, the ad will be shown
+                            only
+                            once to that user in 24 hours. If it's set to 3/24, the ad will be shown three times during
+                            the
+                            same period.</p>
+
+                        <h3>Flow</h3>
+                        <p>The flow refers to the steps a user takes to complete an offer and achieve a conversion. For
+                            example, the flow may end when the user downloads an app, clicks the "agree" button in the
+                            terms
+                            and conditions, or finishes the app tutorial.</p>
+
+                        <h3>Impression</h3>
+                        <p>An impression occurs each time a visitor views an ad on a website.</p>
+
+                        <h3>In-House Offers</h3>
+                        <p>In-house offers are those that are owned by an advertiser or an affiliate network.</p>
+
+                        <h3>Incentive Traffic</h3>
+                        <p>Incentive traffic refers to visitors who receive rewards for engaging with an offer. These
+                            rewards can include money, free items, coupons, or other incentives. Typically, affiliate
+                            networks are not fond of incentive traffic.</p>
+
+                        <h3>GEO or Geotargeting</h3>
+                        <p>Geotargeting is the practice of targeting users based on their geographic location, including
+                            country, state, and city. For example, if you target Western European GEOs, you are focusing
+                            on
+                            countries in Western Europe.
+
+                        <h3>Landing Page</h3>
+                        <p>A landing page is a specific webpage where affiliates direct traffic. It serves as a
+                            follow-up
+                            to any promises or claims made in the content and acts as the next step for visitors on
+                            their
+                            journey to becoming customers.
+
+                        <h3>Language Targeting / Browser Language</h3>
+                        <p>Language targeting means showing ads or content in the user's preferred language. This is
+                            based
+                            on what language their browser is set to or where they are located. It helps advertisers
+                            connect
+                            better with their audience by using their native language, leading to higher engagement and
+                            more
+                            conversions.
+
+                        <h3>Lead</h3>
+                        <p>A lead is someone who has shown interest in an offer by signing up or registering on a
+                            website
+                            for more information. Companies reach out to leads to try to turn them into customers.</p>
+
+                        <h3>Maximum Budget</h3>
+                        <p>The maximum budget is the highest amount of money you plan to spend on a campaign. Once this
+                            limit is reached, the campaign will stop automatically. You can set this budget alongside a
+                            daily budget to control spending over time.</p>
+
+                        <h3>Media Buyer</h3>
+                        <p>A media buyer is a person who purchases traffic from various sources, such as social media,
+                            search engines, or native advertising networks, to promote products or services.</p>
+
+                        <h3>Monetization</h3>
+                        <p>Monetization refers to the methods used to earn money from advertisements.</p>
+
+                        <h3>Offer</h3>
+                        <p>An offer is a promotion for a service or product. It's any advertising content created by
+                            advertisers (the offer owners) and shared by publishers (the traffic owners). Offers are
+                            typically displayed on landing pages.</p>
+
+                        <h3>Paid Search</h3>
+                        <p>Paid search refers to ads displayed on search engine results pages (like Google, Bing, and
+                            Yahoo). You only pay when a user clicks on your ad, which is why this type of traffic is
+                            often
+                            called PPC (Pay Per Click).</p>
+
+                        <h3>Payment Threshold</h3>
+                        <p>The payment threshold is the minimum amount of commissions you must earn before you can
+                            withdraw
+                            your money. Different affiliate networks have varying thresholds, but it typically ranges
+                            from
+                            $50 to $500.</p>
+
+                        <h3>Payout</h3>
+                        <p>Payout is the amount you earn for each conversion. It can vary based on several factors,
+                            including the type of offer, geographic location (GEO), and the market segment (vertical).
+                        </p>
+
+                        <h3>Postback URL</h3>
+                        <p>A Postback URL is used in affiliate marketing to track conversions. When a user clicks on
+                            your
+                            ad, a unique Click ID is generated and sent to your affiliate network. Later, when a
+                            conversion
+                            occurs (like a sale or sign-up), the network sends this Click ID back to your tracking
+                            system
+                            through an HTTP request. This process allows you to see conversions in your reports. This
+                            method
+                            is also called server-side tracking or Server-to-Server (S2S) tracking.</p>
+
+                        <h3>PPC (Pay Per Click)</h3>
+                        <p>PPC is a model where you pay only when someone clicks on your ad. It's a cost-effective way
+                            to
+                            advertise, as you only incur charges when users show interest by engaging with your ad.
+
+                        <h3>PPL (Pay Per Lead)</h3>
+                        <p>PPL means that an affiliate earns a commission each time they generate a lead. A lead
+                            typically
+                            involves a user expressing interest, often by signing up or providing contact information.
+                        </p>
+
+                        <h3>PPS (Pay Per Sale)</h3>
+                        <p>PPS means that an affiliate earns a commission only when a confirmed sale is made. This model
+                            rewards affiliates for driving actual purchases rather than just clicks or leads.</p>
+
+                        <h3>Prelander</h3>
+                        <p>A pre-landing page is a simple page that connects the traffic source you’re using to the
+                            offer’s
+                            landing page. It helps prepare visitors before they reach the main offer, especially when
+                            targeting cold traffic.</p>
+
+                        <h3>Premium Targeting</h3>
+                        <p>This involves focusing on a specific area or section of a chosen website. Typically, there's
+                            a
+                            lot of competition for these spots.</p>
+
+                        <h3>Proxy</h3>
+                        <p>A proxy is a tool that hides your IP address, letting you send and receive information
+                            without
+                            showing your real location.</p>
+
+                        <h3>Publisher</h3>
+                        <p>A publisher is someone who sells their traffic to an affiliate network.</p>
+
+                        <h3>Raw Clicks</h3>
+                        <p>Raw clicks are the total number of clicks on your offer link, including clicks made by you
+                            when
+                            testing the offer or tracker setup.</p>
+
+
+                        <h3>Real-Time Bidding (RTB)</h3>
+                        <p>Real-Time Bidding is when advertisers bid for each ad impression based on factors like
+                            placement, category, device, and carrier. Generally, the highest bidder gets the best
+                            traffic
+                            available.</p>
+
+                        <h3>Redirection</h3>
+                        <p>Redirection is when a URL sends users to a different URL.</p>
+
+                        <h3>Referral Fee</h3>
+                        <p>A referral fee is a commission given to someone who connects a potential customer with a sale
+                            or
+                            lead.</p>
+
+                        <h3>Referring Domain</h3>
+                        <p>A referring domain is the website that brings a unique user to your landing page or offer
+                            page.</p>
+
+                        <h3>Referring URL</h3>
+                        <p>A referring URL is the specific web address that brings a unique user to your landing or
+                            offer
+                            page.</p>
+
+                        <h3>Retargeting</h3>
+                        <p>Retargeting is a strategy used in affiliate marketing to show ads to users who have already
+                            shown interest in your products or services. It helps remind potential customers to complete
+                            a
+                            purchase or take further action.</p>
+
+                        <h3>ROI (Return on Investment)</h3>
+                        <p>ROI measures the success of your campaign. To calculate it, subtract the cost of traffic from
+                            the commissions you earned. If the result is positive, your campaign is profitable.</p>
+
+                        <h3>Run Of Network (RON)</h3>
+                        <p>Run Of Network (RON) refers to an ad campaign where your ads are shown across all websites
+                            within a traffic source's inventory.</p>
+
+                        <h3>Single Offer</h3>
+                        <p>A Single Offer is a marketing promotion tailored for a specific audience segment, such as
+                            targeting users in the UK with Vodafone services for iOS devices.</p>
+
+                        <h3>Single Opt-In</h3>
+                        <p>Single Opt-In (SOI) means you earn your commission after a user completes just one action,
+                            typically submitting their email address. Many SOI offers are found in dating and
+                            sweepstakes
+                            categories.</p>
+
+                        <h3>Smartlink</h3>
+                        <p>A Smartlink is an offer rotator that includes at least two offers in each vertical and
+                            geographic region. It uses an algorithm to optimize and distribute traffic among the
+                            available
+                            offers.</p>
+
+                        <h3>Supply-Side Platforms (SSP)</h3>
+                        <p>Supply-Side Platforms (SSP) are online platforms that connect publishers or webmasters with
+                            ad
+                            exchanges. They help publishers manage their advertising space and maximize revenue by
+                            facilitating the sale of their ad inventory.</p>
+
+                        <h3>Targeted Marketing</h3>
+                        <p>Targeted marketing is a strategy aimed at promoting a product or service to a specific group
+                            of
+                            people who are likely to be interested in it. For instance, if you sell dog food or grooming
+                            services, you might target dog owners to increase awareness and sales.</p>
+
+                        <h3>Token</h3>
+                        <p>A tracking token is a variable created by paid traffic sources to gather specific information
+                            about an ad campaign. These tokens are added to offer URLs to help track performance. Using
+                            multiple tokens in your tracking software can aid in optimizing your campaigns. If you have
+                            questions about tokens, you can reach out to your tracker’s support for assistance.</p>
+
+                        <h3>Tracking Platform</h3>
+                        <p>A tracking platform enables you to monitor paid ad campaigns. These platforms can be either
+                            cloud-hosted or self-hosted. New affiliates often prefer cloud-hosted tracking software for
+                            its
+                            ease of use and accessibility.</p>
+
+                        <h3>Tracking Method</h3>
+                        <p>A tracking method is the approach used by affiliate programs to monitor and record sales,
+                            clicks, or leads generated from advertising efforts.</p>
+
+                        <h3>Tracking URL</h3>
+                        <p>A tracking URL is a web address that includes a specific code for monitoring purposes. This
+                            code
+                            allows the tracking of all visitors who arrive at the website, enabling the collection of
+                            data
+                            on their behavior and interactions.</p>
+
+                        <h3>Traffic</h3>
+                        <p>Refers to the number of users who visit a website, indicating how many times people access
+                            the
+                            site and engage with its content.</p>
+
+                        <h3>Unique click</h3>
+                        <p>The opposite of the raw click. Here the rule is: 1 user = 1 unique click.</p>
+
+                        <h3>URL</h3>
+                        <p>A URL, or Uniform Resource Locator, is the address used to access a website. It specifies the
+                            location of a resource on the internet, allowing users to visit a specific webpage.</p>
+
+                        <h3>White Label</h3>
+                        <p>A white-label product is a good or service created by one company that other businesses
+                            rebrand
+                            and sell as their own. This allows companies to offer products without developing them from
+                            scratch.</p>
+
+                        <h3>Whitelists</h3>
+                        <p>A whitelist is a list of websites that are known to have high-quality traffic for your
+                            offers.
+                            These sites are targeted exclusively in your campaign to ensure better results.</p>
+
+                        <h3>Zone / Source</h3>
+                        <p>Refers to the specific location where ads are placed (like a website,app,or social media)and
+                            the
+                            origin of the traffic,such as social media or emails. This helps track ad performance and
+                            traffic sources.</p>
+
+                        <p>Please visit our <a href="https://adavice.com/help.html">Help Station</a> &
+                            <a href="https://adavice.com/insights.html">Insights</a> for more information on verticals, ad formats and
+                            more.</p>
+
+                        <p>Write to us at <a href="mailto:sales@adavice.com">sales@adavice.com</a>! Our Team is always
+                            happy to help and hear from you, so don’t
+                            hesitate to reach out :)</p>
+
+                        <div class="rates_block">
+                            <div class="share_article">
+                                <p>Share this article</p>
+                                <!-- AddToAny BEGIN -->
+                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                                    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                                    <a class="a2a_button_facebook"></a>
+                                    <a class="a2a_button_twitter"></a>
+                                    <a class="a2a_button_email"></a>
+                                </div>
+                                <script async src="https://static.addtoany.com/menu/page.js"></script>
+                                <!-- AddToAny END -->
+                            </div>
+                            <div class="rate_article">
+                                <p>
+                                    Rate this article
+                                </p>
+
+                                <div class="rating">
+
+                                    <div class="star">
+                                        <span class="full" data-value="1"></span>
+                                        <span class="selected"></span>
+                                    </div>
+
+                                    <div class="star">
+                                        <span class="full" data-value="2"></span>
+                                        <span class="selected"></span>
+                                    </div>
+
+                                    <div class="star">
+                                        <span class="full" data-value="3"></span>
+                                        <span class="selected"></span>
+                                    </div>
+
+                                    <div class="star">
+                                        <span class="full" data-value="4"></span>
+                                        <span class="selected"></span>
+                                    </div>
+
+                                    <div class="star">
+                                        <span class="full" data-value="5"></span>
+                                        <span class="selected"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </article>
-            </main>
+
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="elementor-section elementor-inner-section elementor-element elementor-element-48818834 elementor-section-content-bottom elementor-section-boxed elementor-section-height-default elementor-section-height-default section-padding" data-id="48818834">
+      <div class="elementor-container elementor-column-gap-no">
+        <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-6103fdc5" data-id="6103fdc5">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div class="elementor-element elementor-element-2026783c elementor-widget elementor-widget-heading" data-id="2026783c">
+              <div class="elementor-widget-container">
+                <h2 class="elementor-heading-title elementor-size-default">
+                  RELATED TOPICS
+                </h2>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <footer id="colophon">
-        <div class="footer-width-fixer">
-          <div
-            data-elementor-type="wp-post"
-            data-elementor-id="91"
-            class="elementor elementor-91"
-          >
-            <section
-              class="elementor-section elementor-top-section elementor-element elementor-element-9ffe74f elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-              data-id="9ffe74f"
-              data-element_type="section"
-              data-settings='{"background_background":"classic"}'
-            >
-              <div class="elementor-background-overlay footer-background"></div>
-              <div class="elementor-container elementor-column-gap-no">
-                <div
-                  class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-61b82dc"
-                  data-id="61b82dc"
-                  data-element_type="column"
-                >
-                  <div
-                    class="elementor-widget-wrap elementor-element-populated"
-                  >
-                    <div
-                      class="elementor-element elementor-element-9e7fdb7 elementor-widget elementor-widget-image"
-                      data-id="9e7fdb7"
-                      data-element_type="widget"
-                      data-widget_type="image.default"
-                    >
-                      <div class="elementor-widget-container">
-                        <img
-                          width="200"
-                          height="200"
-                          src="img/blog_logo.svg"
-                          class="attachment-full size-full wp-image-1032"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      class="elementor-element elementor-element-3c55521 elementor-shape-circle elementor-grid-4 e-grid-align-center elementor-widget elementor-widget-social-icons"
-                      data-id="3c55521"
-                      data-element_type="widget"
-                      data-widget_type="social-icons.default"
-                    >
-                      <div class="elementor-widget-container">
-                        <div
-                          class="elementor-social-icons-wrapper elementor-grid"
-                        >
-                          <span class="elementor-grid-item">
-                            <a
-                              class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-7baebf2"
-                              href="https://www.linkedin.com/company/adavice-media/posts/?feedView=all"
-                              target="_blank"
-                            >
-                              <span class="elementor-screen-only"
-                                >Linkedin</span
-                              >
-                              <i class="fab fa-linkedin"></i>
-                            </a>
-                          </span>
-                          <span class="elementor-grid-item">
-                            <a
-                              class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-2be2afd"
-                              href="https://www.facebook.com/adavicecom"
-                              target="_blank"
-                            >
-                              <span class="elementor-screen-only"
-                                >Facebook</span
-                              >
-                              <i class="fab fa-facebook"></i>
-                            </a>
-                          </span>
-                          <span class="elementor-grid-item">
-                            <a
-                              class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-bbdd3a7"
-                              href="https://www.instagram.com/adavice_media?igsh=d2kwNGhyeHVwNml6"
-                              target="_blank"
-                            >
-                              <span class="elementor-screen-only"
-                                >Instagram</span
-                              >
-                              <i class="fab fa-instagram"></i>
-                            </a>
-                          </span>
+      <div class="elementor-container elementor-column-gap-no">
+        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-7316a11" data-id="7316a11">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div class="elementor-element elementor-element-dd14f65 elementor-widget elementor-widget-image" data-id="dd14f65">
+              <div class="elementor-widget-container article-image article-small">
+                <div class="min_read">3 min read</div>
+                <img src="img/launching_article/main_pic.png" class="attachment-large size-large wp-image-796">
+              </div>
+            </div>
+            <div class="elementor-element elementor-element-0b94bb4 elementor-widget elementor-widget-heading" data-id="0b94bb4">
+              <div class="elementor-widget-container">
+                <h5 class="elementor-heading-title elementor-size-default">
+                  FAQ: Successful Launching on Adavice
+                  DSP
+                </h5>
+              </div>
+            </div>
+            <div class="elementor-container elementor-column-gap-default tag-column">
+              <div class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95" data-id="1d5f3b95">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="292afc3d">
+                    <div class="elementor-widget-container">
+                      <div class="elementor-icon-box-wrapper">
+                        <div class="elementor-icon-box-content">
+                          <a href="#" class="main_tag tag tag-block">
+                            dsp
+                          </a>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-2409566"
-                  data-id="2409566"
-                  data-element_type="column"
-                >
-                  <div
-                    class="elementor-widget-wrap elementor-element-populated"
-                  >
-                    <div
-                      class="elementor-element elementor-element-9847378 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                      data-id="9847378"
-                      data-element_type="widget"
-                      data-widget_type="icon-list.default"
-                    >
-                      <div class="elementor-widget-container">
-                        <ul class="elementor-icon-list-items">
-                          <li class="elementor-icon-list-item">
-                            <a href="dsp.html">
-                              <span class="elementor-icon-list-text"
-                                >Self-Serve Ad Platform</span
-                              >
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-2409566"
-                  data-id="2409566"
-                  data-element_type="column"
-                >
-                  <div
-                    class="elementor-widget-wrap elementor-element-populated"
-                  >
-                    <div
-                      class="elementor-element elementor-element-9847378 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                      data-id="9847378"
-                      data-element_type="widget"
-                      data-widget_type="icon-list.default"
-                    >
-                      <div class="elementor-widget-container">
-                        <ul class="elementor-icon-list-items">
-                          <li class="elementor-icon-list-item">
-                            <a href="https://dsp.adavice.com/#/signup">
-                              <span class="elementor-icon-list-text"
-                                >Sign Up</span
-                              >
-                            </a>
-                          </li>
-                          <li class="elementor-icon-list-item">
-                            <a href="service.html">
-                              <span class="elementor-icon-list-text"
-                                >Terms of Service</span
-                              >
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-c88027e"
-                  data-id="c88027e"
-                  data-element_type="column"
-                >
-                  <div
-                    class="elementor-widget-wrap elementor-element-populated"
-                  >
-                    <div
-                      class="elementor-element elementor-element-89d21aa elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                      data-id="89d21aa"
-                      data-element_type="widget"
-                      data-widget_type="icon-list.default"
-                    >
-                      <div class="elementor-widget-container">
-                        <ul class="elementor-icon-list-items">
-                          <li class="elementor-icon-list-item">
-                            <a href="https://adavice.com/contact.html#form2">
-                              <span class="elementor-icon-list-text"
-                                >Get in Touch</span
-                              >
-                            </a>
-                          </li>
-                          <li class="elementor-icon-list-item">
-                            <a href="content.html">
-                              <span class="elementor-icon-list-text"
-                                >Content Policy</span
-                              >
-                            </a>
-                          </li>
-                        </ul>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <p class="copyright">
-                © <span id="year">2025</span> Adavice. All rights reserved
-              </p>
-            </section>
+
+              <div class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95" data-id="1d5f3b95">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="292afc3d">
+                    <div class="elementor-widget-container">
+                      <div class="elementor-icon-box-wrapper">
+                        <div class="elementor-icon-box-content">
+                          <a href="#" class="tag tag-block">
+                            guide
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="elementor-element elementor-element-54b7e30 elementor-widget elementor-widget-text-editor" data-id="54b7e30">
+              <div class="elementor-widget-container">
+                <p>
+                  We’ve collected &amp; answered the
+                  most popular questions for all Adavice
+                  DSP newcomers! Check it out for an
+                  easy start :)
+                </p>
+              </div>
+            </div>
+            <div class="elementor-element elementor-element-b94b459 elementor-widget elementor-widget-button" data-id="b94b459">
+              <div class="elementor-widget-container">
+                <div class="elementor-button-wrapper">
+                  <a class="black-button elementor-button elementor-button-link elementor-size-sm" href="launching.html">
+                    <span class="elementor-button-content-wrapper">
+                      <span class="elementor-button-text">Read more</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </footer>
+        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-c7e7873" data-id="c7e7873">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div class="elementor-element elementor-element-67a603e elementor-widget elementor-widget-image" data-id="67a603e">
+              <div class="elementor-widget-container article-image article-small">
+                <div class="min_read">5 min read</div>
+                <img src="img/mistakes_article/main_pic.png" class="attachment-large size-large wp-image-791">
+              </div>
+            </div>
+            <div class="elementor-element elementor-element-9d79b27 elementor-widget elementor-widget-heading" data-id="9d79b27">
+              <div class="elementor-widget-container">
+                <h5 class="elementor-heading-title elementor-size-default">
+                  Top Mistakes Affiliates Make when
+                  Launching Campaigns: Save this
+                  Checklist!
+                </h5>
+              </div>
+            </div>
+            <div class="elementor-container elementor-column-gap-default tag-column">
+              <div class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95" data-id="1d5f3b95">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="292afc3d">
+                    <div class="elementor-widget-container">
+                      <div class="elementor-icon-box-wrapper">
+                        <div class="elementor-icon-box-content">
+                          <a href="#" class="main_tag tag tag-block">
+                            launching
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95" data-id="1d5f3b95">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="292afc3d">
+                    <div class="elementor-widget-container">
+                      <div class="elementor-icon-box-wrapper">
+                        <div class="elementor-icon-box-content">
+                          <a href="#" class="tag tag-block">
+                            start guide
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="elementor-element elementor-element-bb01448 elementor-widget elementor-widget-text-editor" data-id="bb01448">
+              <div class="elementor-widget-container">
+                <p>
+                  See how to avoid top mistakes when
+                  setting the campaign. Get a pro
+                  checklist with specific benchmarks to
+                  decide how long you should test your
+                  campaign.
+                </p>
+              </div>
+            </div>
+            <div class="elementor-element elementor-element-b94b459 elementor-widget elementor-widget-button" data-id="b94b459">
+              <div class="elementor-widget-container">
+                <div class="elementor-button-wrapper">
+                  <a class="black-button elementor-button elementor-button-link elementor-size-sm" href="mistakes.html">
+                    <span class="elementor-button-content-wrapper">
+                      <span class="elementor-button-text">Read more</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-95d4196" data-id="95d4196">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div class="elementor-element elementor-element-e1f2579 elementor-widget elementor-widget-image" data-id="e1f2579">
+              <div class="elementor-widget-container article-image article-small">
+                <div class="min_read">6 min read</div>
+                <img src="img/dating_article/main_pic.png" class="attachment-large size-large wp-image-791">
+              </div>
+            </div>
+            <div class="elementor-element elementor-element-f263eb0 elementor-widget elementor-widget-heading" data-id="f263eb0">
+              <div class="elementor-widget-container">
+                <h5 class="elementor-heading-title elementor-size-default">
+                  Love Is in the Air: Dating Campaign
+                  Launching Guide
+                </h5>
+              </div>
+            </div>
+            <div class="elementor-container elementor-column-gap-default tag-column">
+              <div class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95" data-id="1d5f3b95">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="292afc3d">
+                    <div class="elementor-widget-container">
+                      <div class="elementor-icon-box-wrapper">
+                        <div class="elementor-icon-box-content">
+                          <a href="#" class="main_tag tag tag-block">
+                            dating
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="elementor-col-25 elementor-inner-column elementor-element elementor-element-1d5f3b95" data-id="1d5f3b95">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-292afc3d elementor-position-left elementor-view-framed elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="292afc3d">
+                    <div class="elementor-widget-container">
+                      <div class="elementor-icon-box-wrapper">
+                        <div class="elementor-icon-box-content">
+                          <a href="#" class="tag tag-block">
+                            launching</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="elementor-element elementor-element-b523534 elementor-widget elementor-widget-text-editor" data-id="b523534">
+              <div class="elementor-widget-container">
+                <p>
+                  Launching the dating campaign and
+                  don’t know where to start? Check
+                  Adavice DSP’s easy launching guide
+                </p>
+              </div>
+            </div>
+            <div class="elementor-element elementor-element-b94b459 elementor-widget elementor-widget-button" data-id="b94b459">
+              <div class="elementor-widget-container">
+                <div class="elementor-button-wrapper">
+                  <a class="black-button elementor-button elementor-button-link elementor-size-sm" href="dating.html">
+                    <span class="elementor-button-content-wrapper">
+                      <span class="elementor-button-text">Read more</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</article>
+</main>
+</div>
+</div>
+</div>
+<footer id="colophon">
+<div class="footer-width-fixer">
+<div class="elementor elementor-91">
+<section
+class="elementor-section elementor-top-section elementor-element elementor-element-9ffe74f elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+data-id="9ffe74f"
+>
+<div class="elementor-background-overlay footer-background"></div>
+<div class="elementor-container elementor-column-gap-no">
+<div
+  class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-61b82dc"
+  data-id="61b82dc"
+>
+  <div
+    class="elementor-widget-wrap elementor-element-populated"
+  >
+    <div
+      class="elementor-element elementor-element-9e7fdb7 elementor-widget elementor-widget-image"
+      data-id="9e7fdb7"
+    >
+      <div class="elementor-widget-container">
+        <img
+          src="img/blog_logo.svg"
+          class="attachment-full size-full wp-image-1032"
+        />
+      </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script id="astra-theme-js-js-extra">
-      var astra = {
-        break_point: "921",
-        isRtl: "",
-        is_scroll_to_id: "",
-        is_scroll_to_top: "",
-        is_header_footer_builder_active: "1",
-        responsive_cart_click: "flyout",
-      };
-    </script>
-    <script src="frontend.min.js" id="astra-theme-js-js"></script>
-  </body>
-</html>
+    <div
+      class="elementor-element elementor-element-3c55521 elementor-shape-circle elementor-grid-4 e-grid-align-center elementor-widget elementor-widget-social-icons"
+      data-id="3c55521"
+    >
+      <div class="elementor-widget-container">
+        <div
+          class="elementor-social-icons-wrapper elementor-grid"
+        >
+          <span class="elementor-grid-item">
+            <a
+              class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-7baebf2"
+              href="https://www.linkedin.com/company/adavice-media/posts/?feedView=all" target="_blank"
+            >
+              <span class="elementor-screen-only"
+                >Linkedin</span
+              >
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </span>
+          <span class="elementor-grid-item">
+            <a
+              class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-2be2afd"
+              href="https://www.facebook.com/adavicecom" target="_blank"
+            >
+              <span class="elementor-screen-only"
+                >Facebook</span
+              >
+              <i class="fab fa-facebook"></i>
+            </a>
+          </span>
+          <span class="elementor-grid-item">
+            <a
+              class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-bbdd3a7"
+              href="https://www.instagram.com/adavice_media?igsh=d2kwNGhyeHVwNml6" target="_blank"
+            >
+              <span class="elementor-screen-only"
+                >Instagram</span
+              >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-2409566"
+  data-id="2409566"
+>
+  <div
+    class="elementor-widget-wrap elementor-element-populated"
+  >
+    <div
+      class="elementor-element elementor-element-9847378 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+      data-id="9847378"
+    >
+      <div class="elementor-widget-container">
+        <ul class="elementor-icon-list-items">
+          <li class="elementor-icon-list-item">
+            <a href="dsp.html">
+              <span class="elementor-icon-list-text"
+                >Self-Serve Ad Platform</span
+              >
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-2409566"
+  data-id="2409566"
+>
+  <div
+    class="elementor-widget-wrap elementor-element-populated"
+  >
+    <div
+      class="elementor-element elementor-element-9847378 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+      data-id="9847378"
+    >
+      <div class="elementor-widget-container">
+        <ul class="elementor-icon-list-items">
+          <li class="elementor-icon-list-item">
+            <a href="https://dsp.adavice.com/#/signup">
+              <span class="elementor-icon-list-text"
+                >Sign Up</span
+              >
+            </a>
+          </li>
+          <li class="elementor-icon-list-item">
+            <a href="service.html">
+              <span class="elementor-icon-list-text"
+                >Terms of Service</span
+              >
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-c88027e"
+  data-id="c88027e"
+>
+  <div
+    class="elementor-widget-wrap elementor-element-populated"
+  >
+    <div
+      class="elementor-element elementor-element-89d21aa elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+      data-id="89d21aa"
+    >
+      <div class="elementor-widget-container">
+        <ul class="elementor-icon-list-items">
+          <li class="elementor-icon-list-item">
+            <a href="https://adavice.com/contact.html#form2">
+              <span class="elementor-icon-list-text"
+                >Get in Touch</span
+              >
+            </a>
+          </li>
+          <li class="elementor-icon-list-item">
+            <a href="content.html">
+              <span class="elementor-icon-list-text"
+                >Content Policy</span
+              >
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<p class="copyright">
+© <span id="year">2025</span> Adavice. All rights reserved
+</p>
+</section>
+</div>
+</div>
+</footer>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script id="astra-theme-js-js-extra">
+var astra = {
+break_point: "921",
+isRtl: "",
+is_scroll_to_id: "",
+is_scroll_to_top: "",
+is_header_footer_builder_active: "1",
+responsive_cart_click: "flyout",
+};
+</script>
+<script src="img/blog-script.js"></script>
+<script src="frontend.min.js" id="astra-theme-js-js"></script>
+</body>
+</html>        

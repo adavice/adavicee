@@ -76,7 +76,7 @@
 }
 
 .blog .dark-section .elementor-background-overlay {
-  background-image: url(blog-files/bg-line.png);
+  background-image: url(img/bg-line.png);
   background-position: center center;
   background-repeat: repeat-y;
   opacity: 0.05;
@@ -174,7 +174,7 @@
   background: #fff;
   border: none;
   border-radius: 0px 5px 5px 0px;
-  background-image: url(blog-files/icons_search.svg);
+  background-image: url(img/icons_search.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -302,7 +302,7 @@
   margin-right: auto;
 }
 
-.blog .inner_image.thin_border {
+.blog .thin_border {
   border: 1px #898989 solid;
 }
 
@@ -484,6 +484,7 @@
   .blog .article-image,
   .blog .article-image.article-small {
     height: fit-content;
+    width: 100%;
   }
 
   .blog .vertical-article .elementor-column.elementor-col-50 {
