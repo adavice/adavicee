@@ -464,6 +464,21 @@
     font-size: 30px;
     line-height: 1;
   }
+
+  .blog .display-flex-mob {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .blog .display-flex-mob h2 {
+    text-align: left;
+  }
+
+  .blog .display-flex-mob  .elementor-column.elementor-col-50{
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 768px) {
