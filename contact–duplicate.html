@@ -4700,16 +4700,27 @@
                                 }
                               </style>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        //debugger;
-        const form = document.querySelector('._form._form_1._inline-form');
-        if (form) {
-            
-            // Or set multiple properties at once
-            form.style.cssText = `
-                background-color: transparent !important;
-            `;
-        }
+    document.addEventListener('DOMContentLoaded', () => { 
+    //debugger; 
+        const form = document.querySelector('._form._form_1._inline-form'); 
+        if (form) { 
+            // Change from querySelector to querySelectorAll to get all labels
+            const formLabels = form.querySelectorAll('._form-label'); 
+            console.log('Number of labels found:', formLabels.length); // Debug info
+    
+            // Set form background
+            form.style.cssText = ` 
+                background-color: transparent !important; 
+            `; 
+    
+            // Apply style to each label
+            formLabels.forEach(label => {
+                label.style.cssText = ` 
+                    color: #fff !important; 
+                `; 
+                console.log('Applied style to label:', label); // Debug info
+            });
+        } 
     });
 </script>
                             <section
