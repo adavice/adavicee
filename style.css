@@ -32,6 +32,11 @@
   text-decoration: none !important;
 }
 
+.blog .mini_logo {
+  height: 40px;
+  vertical-align: bottom;
+}
+
 .blog
   [data-section="section-header-mobile-trigger"]
   .ast-button-wrap
