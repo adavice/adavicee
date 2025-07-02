@@ -3955,7 +3955,55 @@
         }
       }
     </style>
+                            <style>
+                                ._form_1 {
+                                  margin: auto !important;
+                                }
+                                ._form._form_1._inline-form input,
+                                ._form._form_1._inline-form select,
+                                ._form._form_1._inline-form textarea {
+                                  width: 100% !important;
+                                  border-radius: 5px !important;
+                                }
+                          
+                                form._form._form_1._inline-form {
+                                  position: relative !important;
+                                  text-align: left !important;
+                                  margin: 0px auto 0 !important;
+                                  padding: 20px !important;
+                                  -webkit-box-sizing: border-box !important;
+                                  -moz-box-sizing: border-box !important;
+                                  box-sizing: border-box !important;
+                                  border: 0 !important;
+                                  max-width: 500px !important;
+                                  -moz-border-radius: 0px !important;
+                                  -webkit-border-radius: 0px !important;
+                                  font-size: 16px !important;
+                                  color: #fff !important;
+                                  padding: 0.75em !important;
+                                  height: auto !important;
+                                  border-width: 1px !important;
+                                  border-radius: 2px !important;
+                                  box-shadow: none !important;
+                                  box-sizing: border-box !important;
+                                  transition: all 0.2s linear !important;
+                                }
+                          
+                                form {
+                                  background: none !important;
+                                } 
+                          
+                                title._form-title {
+                                  display: none !important;
+                                }
+                                ._form._form_1._inline-form p {
+                                  display: none !important;
+                                }
 
+                                ._form_1 label, .field-required {
+                                    color: #fff !important;
+                                }
+                              </style>
   </head>
 
   <body
@@ -4650,79 +4698,8 @@
                             ></script>
                             <img src="" alt="" />
 
-                            <style>
-                                ._form_1 {
-                                  margin: auto !important;
-                                }
-                                ._form._form_1._inline-form input,
-                                ._form._form_1._inline-form select,
-                                ._form._form_1._inline-form textarea {
-                                  width: 100% !important;
-                                  border-radius: 5px !important;
-                                }
-                          
-                                form._form._form_1._inline-form {
-                                  position: relative !important;
-                                  text-align: left !important;
-                                  margin: 0px auto 0 !important;
-                                  padding: 20px !important;
-                                  -webkit-box-sizing: border-box !important;
-                                  -moz-box-sizing: border-box !important;
-                                  box-sizing: border-box !important;
-                                  border: 0 !important;
-                                  max-width: 500px !important;
-                                  -moz-border-radius: 0px !important;
-                                  -webkit-border-radius: 0px !important;
-                                  font-size: 16px !important;
-                                  color: #fff !important;
-                                  padding: 0.75em !important;
-                                  height: auto !important;
-                                  border-width: 1px !important;
-                                  border-radius: 2px !important;
-                                  box-shadow: none !important;
-                                  box-sizing: border-box !important;
-                                  transition: all 0.2s linear !important;
-                                }
-                          
-                                form {
-                                  background: none !important;
-                                } 
-                          
-                                title._form-title {
-                                  display: none !important;
-                                }
-                                ._form._form_1._inline-form p {
-                                  display: none !important;
-                                }
 
-                                ._form_1 label, .field-required {
-                                    color: #fff !important;
-                                }
-                              </style>
-<script>
-    document.addEventListener('DOMContentLoaded', () => { 
-    //debugger; 
-        const form = document.querySelector('._form._form_1._inline-form'); 
-        if (form) { 
-            // Change from querySelector to querySelectorAll to get all labels
-            const formLabels = form.querySelectorAll('._form-label'); 
-            console.log('Number of labels found:', formLabels.length); // Debug info
-    
-            // Set form background
-            form.style.cssText = ` 
-                background-color: transparent !important; 
-            `; 
-    
-            // Apply style to each label
-            formLabels.forEach(label => {
-                label.style.cssText = ` 
-                    color: #fff !important; 
-                `; 
-                console.log('Applied style to label:', label); // Debug info
-            });
-        } 
-    });
-</script>
+
                             <section
                               class="elementor-section elementor-inner-section elementor-element elementor-element-d3ed365 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                               data-id="d3ed365"
@@ -5237,6 +5214,30 @@
         </div>
       </footer>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { 
+        //debugger; 
+            const form = document.querySelector('._form._form_1._inline-form'); 
+            if (form) { 
+                // Change from querySelector to querySelectorAll to get all labels
+                const formLabels = form.querySelectorAll('._form-label'); 
+                console.log('Number of labels found:', formLabels.length); // Debug info
+        
+                // Set form background
+                form.style.cssText = ` 
+                    background-color: transparent !important; 
+                `; 
+        
+                // Apply style to each label
+                formLabels.forEach(label => {
+                    label.style.cssText = ` 
+                        color: #fff !important; 
+                    `; 
+                    console.log('Applied style to label:', label); // Debug info
+                });
+            } 
+        });
+    </script>
     <!-- #page -->
     <script type="text/javascript">
       const lazyloadRunObserver = () => {
