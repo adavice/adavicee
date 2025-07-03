@@ -592,6 +592,7 @@
   align-items: center;
   height: fit-content;
   overflow: hidden;
+  margin-bottom: 50px;
 }
 
 .blog .pool_link {
