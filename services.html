@@ -3875,7 +3875,6 @@
 
     <script src="v4-shims.min.js" id="font-awesome-4-shim-js"></script>
     <script src="jquery.min.js" id="jquery-core-js"></script>
-    <script src="jquery-migrate.min.js" id="jquery-migrate-js"></script>
 
     <style>
       .recentcomments a {
@@ -3980,6 +3979,15 @@
       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
     />
     <style>
+      .carousel {
+        min-height: 340px;
+        visibility: hidden;
+      }
+
+      .slick-initialized {
+        visibility: visible;
+      }
+
       .slide-container {
         position: relative;
       }
@@ -4098,6 +4106,10 @@
       }
 
       @media screen and (max-width: 767px) {
+        .carousel {
+          min-height: fit-content;
+        }
+
         .slick-slide {
           height: fit-content;
         }
@@ -4746,6 +4758,7 @@
                                 <div class="carousel">
                                   <div class="slide-container">
                                     <img
+                                      rel="preload"
                                       src="seo.jpg"
                                       alt="Forex Trading Platform Interface"
                                     />
@@ -4774,6 +4787,7 @@
                                   </div>
                                   <div class="slide-container">
                                     <img
+                                      rel="preload"
                                       src="stats.jpg"
                                       alt="Lead Qualification & Sales Funnel Optimization"
                                     />
@@ -4805,7 +4819,11 @@
                                     </div>
                                   </div>
                                   <div class="slide-container">
-                                    <img src="page-3.png" alt="SMS traffic" />
+                                    <img
+                                      rel="preload"
+                                      src="page-3.png"
+                                      alt="SMS traffic"
+                                    />
                                     <div class="bottom-box">
                                       <div class="tags">
                                         <div class="tag">SMS traffic</div>
@@ -4825,6 +4843,7 @@
                                   </div>
                                   <div class="slide-container">
                                     <img
+                                      rel="preload"
                                       src="design.jpg"
                                       alt="Design and Creative"
                                     />
@@ -4851,6 +4870,7 @@
                                   </div>
                                   <div class="slide-container">
                                     <img
+                                      rel="preload"
                                       src="call.png"
                                       alt="Qualified support team"
                                     />
@@ -4876,7 +4896,11 @@
                                     </div>
                                   </div>
                                   <div class="slide-container">
-                                    <img src="mobi.jpg" alt="Adavice DSP" />
+                                    <img
+                                      rel="preload"
+                                      src="mobi.jpg"
+                                      alt="Adavice DSP"
+                                    />
 
                                     <div class="bottom-box">
                                       <div class="tags">
@@ -5338,12 +5362,13 @@
     ></script>
 
     <script>
-      $(window).on('load', function () {
+      $(window).on("load", function () {
         $(".carousel").slick({
           dots: true,
           arrows: true,
           infinite: true,
           speed: 500,
+          lazyLoad: "ondemand",
           slidesToShow: 2,
           slidesToScroll: 1,
           responsive: [
