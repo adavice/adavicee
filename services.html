@@ -4,14 +4,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="profile" href="https://gmpg.org/xfn/11" />
-    <meta
-      name="robots"
-      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-    />
 
     <title>Services</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -3974,329 +3969,150 @@
       }
     </style>
 
-<style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <style>
+      .slide-container {
+        position: relative;
+      }
 
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s ease-in-out;
+        font-size: 1.5em;
+        font-weight: bold;
+        flex-direction: column;
+        border-radius: 28px;
+        padding: 5px;
+      }
 
-  .portfolio_box {
-    padding-bottom: 50px;
-    background-blend-mode: darken;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-  
-  .carousel-container {
-    position: relative;
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 50px 40px;
-    box-sizing: border-box;
-  }
-  
-  .carousel-wrapper {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-  }
-  
-  .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease;
-    width: fit-content;
-    gap: 30px;
-    will-change: transform;
-  }
-  
-  .page-example-box {
-    width: calc((1280px - 140px) / 2);
-    min-width: calc((1280px - 140px) / 2);
-    position: relative;
-    border: 2px solid #133f6f;
-    overflow: hidden;
-    border-radius: 30px;
-    background-color: azure;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-shrink: 0;
-  }
-  
-  .page-example-box img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 28px;
-    object-fit: cover;
-    aspect-ratio: 16/9;
-  }
-  
-  .hover-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.75);
-    color: white;
-    padding: 20px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 28px;
-    box-sizing: border-box;
-  }
-  
-  .hover-content h3 {
-    color: #fff;
-    font-size: 21px;
-    margin: 0 0 15px 0;
-    text-align: center;
-  }
-  
-  .hover-content p {
-    font-size: 14px;
-    text-align: center;
-    margin: 0;
-    max-width: 80%;
-    line-height: 1.5;
-  }
-  
-  .page-example-box:hover .hover-content {
-    opacity: 1;
-  }
-  
-  .bottom-box {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
-    border-radius: 0 0 28px 28px;
-  }
-  
-  .tags {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .tag {
-    background-color: white;
-    color: #133f6f;
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 500;
-    box-shadow: 0 0 18px rgba(19, 63, 111, 0.3);
-  }
-  
-  .carousel-arrows {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    pointer-events: none;
-    z-index: 10;
-    width: calc(100% + 40px);
-    margin-left: -20px;
-  }
-  
-  .carousel-arrow {
-    padding: 0;
-    width: 50px;
-    height: 50px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 0 18px rgba(19, 63, 111, 0.3);
-    pointer-events: auto;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  
-  .carousel-arrow:hover {
-    transform: scale(1.1);
-  }
-  
-  .carousel-arrow.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: scale(1);
-  }
-  
-  .carousel-pagination {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
-  }
-  
-  .pagination-dot {
-    width: 10px;
-    height: 10px;
-    padding: 0;
-    border: none;
-    border-radius: 50%;
-    background: #ccc;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .pagination-dot:hover {
-    background: #999;
-  }
-  
-  .pagination-dot.active {
-    background: #133f6f;
-    transform: scale(1.2);
-  }
-  
-  .portfolio-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(19, 63, 111, 0.9);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .portfolio-popup.active {
-    opacity: 1;
-  }
-  
-  .popup-content {
-    position: relative;
-    background: white;
-    border-radius: 30px;
-    width: 90%;
-    max-width: 800px;
-    max-height: 90vh;
-    overflow: auto;
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
-  }
-  
-  .portfolio-popup.active .popup-content {
-    transform: scale(1);
-  }
-  
-  .close_pop {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
-    cursor: pointer;
-  }
-  
-  .close_pop .close {
-    width: 30px;
-    height: 30px;
-    padding: 8px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 18px rgba(19, 63, 111, 0.3);
-    transition: transform 0.3s ease;
-  }
-  
-  .close_pop .close:hover {
-    transform: scale(1.1);
-  }
-  
-  .preview {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 30px;
-  }
-  
-  /* Desktop View */
-  @media screen and (min-width: 769px) {
-    .carousel-track {
-      gap: 30px;
-    }
-    
-    .page-example-box {
-      margin-right: 0;
-    }
-  }
-  
-  /* Medium Screens */
-  @media screen and (min-width: 769px) and (max-width: 1320px) {
-    .page-example-box {
-      width: calc((100vw - 140px) / 2);
-      min-width: calc((100vw - 140px) / 2);
-    }
-  }
-  
-  /* Mobile View */
-  @media screen and (max-width: 768px) {
-    .carousel-arrows {
-      display: none;
-    }
-    
-    .carousel-container {
-      padding: 50px 20px;
-    }
-  
-    .page-example-box {
-      width: calc(100vw - 40px);
-      min-width: calc(100vw - 40px);
-      margin-right: 0;
-    }
-  
-    .carousel-track {
-      gap: 30px;
-    }
-  
-    .hover-content h3 {
-      font-size: 20px;
-    }
-  
-    .hover-content p {
-      font-size: 14px;
-    }
-  
-    .tag {
-      padding: 6px 12px;
-      font-size: 12px;
-    }
-  }
-  
-  /* Touch Device Optimization */
-  @media (hover: hover) {
-    .carousel-arrow:hover {
-      transform: scale(1.1);
-    }
-  }
-  
-  /* Reduced Motion Preferences */
-  @media (prefers-reduced-motion: reduce) {
-    .carousel-track,
-    .page-example-box,
-    .hover-content,
-    .popup-content,
-    .close_pop .close {
-      transition: none;
-    }
-  }
-      </style>
+      .overlay h3 {
+        color: #fff;
+        font-size: 21px;
+        margin: 0 0 15px 0;
+        text-align: center;
+      }
+
+      .overlay p {
+        font-size: 14px;
+        text-align: center;
+        margin: 0;
+        max-width: 80%;
+        line-height: 1.5;
+      }
+
+      .overlay a {
+        color: #69b0fc;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .slide-container:hover .overlay {
+        opacity: 1;
+      }
+
+      .slick-slide img {
+        width: 100%;
+        height: 100%;
+        border-radius: 28px;
+        border: 2px solid #133f6f;
+      }
+
+      .slick-slide {
+        height: 320px;
+        margin: 10px;
+      }
+
+      .bottom-box {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 0 0 28px 28px;
+      }
+
+      .tags {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .tag {
+        background-color: white;
+        color: #133f6f;
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 0 18px rgba(19, 63, 111, 0.3);
+      }
+
+      .slick-prev:before,
+      .slick-next:before {
+        font-size: 32px;
+        font-weight: 100;
+      }
+
+      .slick-prev,
+      .slick-next {
+        z-index: 10;
+        width: 32px;
+        height: 32px;
+      }
+
+      .slick-prev {
+        left: 13px;
+      }
+
+      .slick-next {
+        right: 13px;
+      }
+
+      .slick-dots li button:before {
+        font-size: 10px;
+      }
+
+      .slick-dots li.slick-active button:before {
+        opacity: 1;
+        color: #133f6f;
+      }
+
+      @media screen and (max-width: 767px) {
+        .slick-slide {
+          height: fit-content;
+        }
+        .overlay h3 {
+          font-size: 14px;
+        }
+        .overlay p {
+          font-size: 11px;
+        }
+        .slick-prev:before,
+        .slick-next:before {
+          content: none;
+        }
+      }
+    </style>
   </head>
 
   <body
@@ -4922,204 +4738,164 @@
                                 </div>
                               </div>
                             </div>
+                            <div
+                              class="elementor-element elementor-element-6f8cb1b8 elementor-align-center elementor-mobile-align-center elementor-widget elementor-widget-button"
+                              data-id="6f8cb1b8"
+                            >
+                              <div class="elementor-widget-container">
+                                <div class="carousel">
+                                  <div class="slide-container">
+                                    <img
+                                      src="seo.jpg"
+                                      alt="Forex Trading Platform Interface"
+                                    />
+                                    <div class="bottom-box">
+                                      <div class="tags">
+                                        <div class="tag">
+                                          Forex Trading Platform Interface
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="overlay">
+                                      <h3>Fully Managed Ad Solutions</h3>
+                                      <p>
+                                        Display advertising forms the foundation
+                                        of our marketing approach, and we have
+                                        the in-depth knowledge to harness its
+                                        full potential for your business. Our
+                                        offerings include various ad formats
+                                        such as push, in-page, pop, native,
+                                        banners, and more. Each campaign is
+                                        customized to align with your goals,
+                                        delivering scalable and budget-friendly
+                                        growth.
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div class="slide-container">
+                                    <img
+                                      src="stats.jpg"
+                                      alt="Lead Qualification & Sales Funnel Optimization"
+                                    />
+                                    <div class="bottom-box">
+                                      <div class="tags">
+                                        <div class="tag">
+                                          Lead Qualification &amp; Sales Funnel
+                                          Optimization
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="overlay">
+                                      <h3>
+                                        Lead Qualification &amp; Sales Funnel
+                                        Optimization
+                                      </h3>
+                                      <p>
+                                        Adavice specializes in generating
+                                        high-quality leads and categorizing them
+                                        according to their interests. When
+                                        potential customers express interest in
+                                        a specific vertical, we engage them
+                                        further through retargeting methods such
+                                        as Push Notifications or SMS. We
+                                        strictly adhere to GDPR regulations,
+                                        ensuring our entire database consists of
+                                        valid, opt-in user information.
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div class="slide-container">
+                                    <img src="page-3.png" alt="SMS traffic" />
+                                    <div class="bottom-box">
+                                      <div class="tags">
+                                        <div class="tag">SMS traffic</div>
+                                      </div>
+                                    </div>
+                                    <div class="overlay">
+                                      <h3>SMS traffic</h3>
+                                      <p>
+                                        With our in-house SMS traffic service,
+                                        you gain access to a trusted and engaged
+                                        audience via our proprietary
+                                        database.Whether you want to increase
+                                        sales or enhance brand loyalty, our SMS
+                                        solutions deliver actionable results.
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div class="slide-container">
+                                    <img
+                                      src="design.jpg"
+                                      alt="Design and Creative"
+                                    />
+                                    <div class="bottom-box">
+                                      <div class="tags">
+                                        <div class="tag">
+                                          Design and Creative
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="overlay">
+                                      <h3>Design and Creative</h3>
+                                      <p>
+                                        These two words, design and creative are
+                                        ones which people tend to confuse. If
+                                        combined correctly, they make the whole
+                                        difference between success and failure.
+                                        As a premium agency, Adavice Media
+                                        relies on it’s inhouse studio and
+                                        skilled campaign copywriters to make
+                                        that difference.
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div class="slide-container">
+                                    <img
+                                      src="call.png"
+                                      alt="Qualified support team"
+                                    />
+                                    <div class="bottom-box">
+                                      <div class="tags">
+                                        <div class="tag">
+                                          Qualified support team
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="overlay">
+                                      <h3>Qualified support team</h3>
+                                      <p>
+                                        Our Account Managers are not just
+                                        coordinators, they are strategic
+                                        partners in achieving advertising
+                                        success. With their expertise and
+                                        commitment to excellence they ensure
+                                        every campaign is not only creatively
+                                        inspiring but also drives measurable
+                                        results.
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div class="slide-container">
+                                    <img src="mobi.jpg" alt="Adavice DSP" />
 
-                            <section class="portfolio_box" id="fade_bottom">
-                              <div class="carousel-container">
-                                <div class="carousel-wrapper">
-                                  <!-- Carousel Track Content -->
-                                  <div class="carousel-track">
-                                    <!-- Slide 1 -->
-                                    <div
-                                      class="page-example-box"
-                                      id="page-1"
-                                      role="button"
-                                      tabindex="0"
-                                      aria-label="Forex Trading Platform"
-                                    >
-                                      <img
-                                        src="seo.jpg"
-                                        alt="Forex Trading Platform Interface"
-                                        loading="lazy"
-                                      />
-                                      <div class="hover-content">
-                                        <h3>Fully Managed Ad Solutions</h3>
-                                        <p>
-                                          Display advertising forms the foundation of our marketing approach, and we have the in-depth knowledge to harness its full potential for your business. Our offerings include various ad formats such as push, in-page, pop, native, banners, and more. Each campaign is customized to align with your goals, delivering scalable and budget-friendly growth.
-                                        </p>
-                                      </div>
-                                      <div class="bottom-box">
-                                        <div class="tags">
-                                          <div class="tag">Fully Managed Ad Solutions</div>
-                                        </div>
-                                      </div>
-                                    </div>
-                        
-                                    
-                        
-                                    <!-- Slide 3 -->
-                                    <div
-                                      class="page-example-box"
-                                      id="page-3"
-                                      role="button"
-                                      tabindex="0"
-                                      aria-label="Forex Analytics"
-                                    >
-                                      <img
-                                        src="mobile.png"
-                                        alt="Forex Analytics Dashboard"
-                                        loading="lazy"
-                                      />
-                                      <div class="hover-content">
-                                        <h3>SMS traffic</h3>
-                                        <p>
-                                          With our in-house SMS traffic service, you gain access to a trusted and engaged audience via our proprietary database.Whether you want to increase sales or enhance brand loyalty, our SMS solutions deliver actionable results.
-                                        </p>
-                                      </div>
-                                      <div class="bottom-box">
-                                        <div class="tags">
-                                          <div class="tag">SMS traffic</div>
-                                        </div>
-                                      </div>
-                                    </div>
-                        
-                                    <!-- Slide 4 -->
-                                    <div
-                                      class="page-example-box"
-                                      id="page-4"
-                                      role="button"
-                                      tabindex="0"
-                                      aria-label="Gaming Interface"
-                                    >
-                                      <img
-                                        src="design.jpg"
-                                        alt="Gaming Interface Design"
-                                        loading="lazy"
-                                      />
-                                      <div class="hover-content">
-                                        <h3>Design and Creative</h3>
-                                        <p>These two words, design and creative are ones which people tend to confuse. If combined correctly, they make the whole difference between success and failure. As a premium agency, Adavice Media relies on it’s inhouse studio and skilled campaign copywriters to make that difference.</p>
-                                      </div>
-                                      <div class="bottom-box">
-                                        <div class="tags">
-                                          <div class="tag">Design and Creative</div>
-                                        </div>
+                                    <div class="bottom-box">
+                                      <div class="tags">
+                                        <div class="tag">Adavice DSP</div>
                                       </div>
                                     </div>
 
-                                    <!-- Slide 2 -->
-                                    <div
-                                      class="page-example-box"
-                                      id="page-2"
-                                      role="button"
-                                      tabindex="0"
-                                      aria-label="Gambling Platform"
-                                    >
-                                      <img
-                                        src="stats.jpg"
-                                        alt="Gambling Platform Interface"
-                                        loading="lazy"
-                                      />
-                                      <div class="hover-content">
-                                        <h3>Lead Qualification & Sales Funnel Optimization</h3>
-                                        <p>
-                                          Adavice specializes in generating high-quality leads and categorizing them according to their interests. When potential customers express interest in a specific vertical, we engage them further through retargeting methods such as Push Notifications or SMS. We strictly adhere to GDPR regulations, ensuring our entire database consists of valid, opt-in user information.
-                                        </p>
-                                      </div>
-                                      <div class="bottom-box">
-                                        <div class="tags">
-                                          <div class="tag">Lead Qualification & Sales Funnel Optimization</div>
-                                        </div>
-                                      </div>
+                                    <div class="overlay">
+                                      <h3>Adavice DSP</h3>
+                                      <p>
+                                        Read more about our self-service
+                                        solution tailored for media buyers
+                                        <a href="dsp.html"> here.</a>
+                                      </p>
                                     </div>
-                        
-                                    <!-- Slide 5 -->
-                                    <div
-                                      class="page-example-box"
-                                      id="page-5"
-                                      role="button"
-                                      tabindex="0"
-                                      aria-label="Crypto Exchange"
-                                    >
-                                      <img
-                                        src="call.png"
-                                        alt="Cryptocurrency Exchange Platform"
-                                        loading="lazy"
-                                      />
-                                      <div class="hover-content">
-                                        <h3>Qualified support team</h3>
-                                        <p>Our Account Managers are not just coordinators, they are strategic partners in achieving advertising success. With their expertise and commitment to excellence they ensure every campaign is not only creatively inspiring but also drives measurable results.</p>
-                                      </div>
-                                      <div class="bottom-box">
-                                        <div class="tags">
-                                          <div class="tag">Qualified support team</div>
-                                        </div>
-                                      </div>
-                                    </div>
-                        
-                                    <!-- Slide 6 -->
-                                    <div
-                                      class="page-example-box"
-                                      id="port.jpg"
-                                      role="button"
-                                      tabindex="0"
-                                      aria-label="Crypto Wallet"
-                                    >
-                                      <img
-                                        src="mobi.jpg"
-                                        alt="Cryptocurrency Wallet Interface"
-                                        loading="lazy"
-                                      />
-                                      <div class="hover-content">
-                                        <h3>Adavice DSP</h3>
-                                        <p>
-                                          Read more about our self-service solution tailored for media buyers <a href="dsp.html"> here.</a>
-                                        </p>
-                                      </div>
-                                      <div class="bottom-box">
-                                        <div class="tags">
-                                          <div class="tag">Adavice DSP</div>
-                                        </div>
-                                      </div>
-                                    </div>
-                        
-                                    
-                        
-                                    
-                        
-                                  
                                   </div>
                                 </div>
-                        
-                                <div
-                                  class="carousel-arrows"
-                                  role="navigation"
-                                  aria-label="Carousel Navigation"
-                                >
-                                  <button class="carousel-arrow prev" aria-label="Previous slide">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path
-                                        fill="currentColor"
-                                        d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
-                                      />
-                                    </svg>
-                                  </button>
-                                  <button class="carousel-arrow next" aria-label="Next slide">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path
-                                        fill="currentColor"
-                                        d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                        
-                                <div
-                                  class="carousel-pagination"
-                                  role="navigation"
-                                  aria-label="Carousel Pagination"
-                                ></div>
                               </div>
-                            </section>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -5554,248 +5330,32 @@
     <script src="core.min.js" id="jquery-ui-core-js"></script>
 
     <script src="frontend(1).min.js" id="elementor-frontend-js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
 
-  <script>
-      $(document).ready(function() {
-
-const track = $('.carousel-track');
-const slides = $('.page-example-box');
-const totalSlides = slides.length;
-let currentSlide = 0;
-let touchStartX = 0;
-let touchEndX = 0;
-let isAnimating = false;
-
-const getSlidesPerView = () => window.innerWidth <= 768 ? 1 : 2;
-let slidesPerView = getSlidesPerView();
-
-function calculateSlideWidth() {
-  if (window.innerWidth <= 768) {
-    return window.innerWidth - 40; // Mobile view: full width minus padding
-  } else if (window.innerWidth <= 1320) {
-    return (window.innerWidth - 140) / 2; // Medium screens: account for padding and gap
-  } else {
-    return (1280 - 140) / 2; // Desktop: max-width container
-  }
-}
-
-function updateCarousel(animate = true) {
-  if (isAnimating) return;
-  
-  isAnimating = true;
-  
-  const slideWidth = calculateSlideWidth();
-  const gapWidth = 30;
-  const moveBy = slidesPerView === 1 ? 1 : 2;
-  
-  const translateX = -(currentSlide * (slideWidth * moveBy + gapWidth * (moveBy - 1)));
-  
-  track.css({
-    'transition': animate ? 'transform 0.5s ease' : 'none',
-    'transform': `translateX(${translateX}px)`
-  });
-  
-  $('.pagination-dot').removeClass('active')
-                     .attr('aria-current', 'false');
-  $(`.pagination-dot[data-slide="${currentSlide}"]`)
-    .addClass('active')
-    .attr('aria-current', 'true');
-  
-  const maxSlide = Math.floor(totalSlides / (slidesPerView * 2));
-  $('.carousel-arrow.prev').toggleClass('disabled', currentSlide === 0);
-  $('.carousel-arrow.next').toggleClass('disabled', currentSlide >= maxSlide);
-  
-  updateAriaLabels();
-  
-  setTimeout(() => {
-    isAnimating = false;
-  }, 500);
-}
-
-function updatePagination() {
-  const paginationContainer = $('.carousel-pagination');
-  paginationContainer.empty();
-  
-  const moveBy = slidesPerView === 1 ? 1 : 2;
-  const pageCount = Math.ceil(totalSlides / (slidesPerView * moveBy));
-  
-  for(let i = 0; i < pageCount; i++) {
-    const dot = $('<button>', {
-      class: `pagination-dot ${i === 0 ? 'active' : ''}`,
-      'data-slide': i,
-      'aria-label': `Go to slide group ${i + 1}`,
-      'aria-current': i === 0 ? 'true' : 'false'
-    });
-    paginationContainer.append(dot);
-  }
-}
-
-function updateAriaLabels() {
-  slides.attr('aria-hidden', 'true');
-  const startIndex = currentSlide * (slidesPerView === 1 ? 1 : 2);
-  const visibleSlides = slides.slice(startIndex, startIndex + (slidesPerView === 1 ? 1 : 2));
-  visibleSlides.attr('aria-hidden', 'false');
-}
-
-track.on('touchstart', function(e) {
-  touchStartX = e.touches[0].clientX;
-  track.css('transition', 'none');
-});
-
-track.on('touchmove', function(e) {
-  if (isAnimating) return;
-  
-  const touch = e.touches[0];
-  const diff = touchStartX - touch.clientX;
-  const slideWidth = calculateSlideWidth();
-  const gapWidth = 30;
-  const moveBy = slidesPerView === 1 ? 1 : 2;
-  
-  const currentTranslate = -(currentSlide * (slideWidth * moveBy + gapWidth * (moveBy - 1)));
-  const newTranslate = currentTranslate - diff;
-  
-  const maxSlide = Math.floor(totalSlides / (slidesPerView * moveBy));
-  if ((currentSlide === 0 && diff < 0) || 
-      (currentSlide >= maxSlide && diff > 0)) {
-    return;
-  }
-  
-  track.css('transform', `translateX(${newTranslate}px)`);
-  e.preventDefault();
-});
-
-track.on('touchend', function(e) {
-  touchEndX = e.changedTouches[0].clientX;
-  handleSwipe();
-});
-
-function handleSwipe() {
-  const swipeThreshold = 50;
-  const difference = touchStartX - touchEndX;
-  const moveBy = slidesPerView === 1 ? 1 : 2;
-  const maxSlide = Math.floor(totalSlides / (slidesPerView * moveBy));
-  
-  track.css('transition', 'transform 0.5s ease');
-  
-  if (Math.abs(difference) > swipeThreshold) {
-    if (difference > 0 && currentSlide < maxSlide) {
-      currentSlide++;
-    } else if (difference < 0 && currentSlide > 0) {
-      currentSlide--;
-    }
-  }
-  
-  updateCarousel();
-}
-
-// Navigation handlers
-$('.carousel-arrow.prev').click(() => {
-  if (!isAnimating && currentSlide > 0) {
-    currentSlide--;
-    updateCarousel();
-  }
-});
-
-$('.carousel-arrow.next').click(() => {
-  const moveBy = slidesPerView === 1 ? 1 : 2;
-  const maxSlide = Math.floor(totalSlides / (slidesPerView * moveBy));
-  if (!isAnimating && currentSlide < maxSlide) {
-    currentSlide++;
-    updateCarousel();
-  }
-});
-
-
-$(document).keydown(function(e) {
-  if (!isAnimating) {
-    const moveBy = slidesPerView === 1 ? 1 : 2;
-    const maxSlide = Math.floor(totalSlides / (slidesPerView * moveBy));
-    
-    switch(e.keyCode) {
-      case 37: // Left arrow
-        if (currentSlide > 0) {
-          currentSlide--;
-          updateCarousel();
-        }
-        break;
-      case 39: // Right arrow
-        if (currentSlide < maxSlide) {
-          currentSlide++;
-          updateCarousel();
-        }
-        break;
-    }
-  }
-});
-
-
-$(document).on('click', '.pagination-dot', function() {
-  if (!isAnimating) {
-    currentSlide = parseInt($(this).data('slide'));
-    updateCarousel();
-  }
-});
-
-
-const debounce = (func, wait) => {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-};
-
-$(window).on('resize', debounce(function() {
-  const newSlidesPerView = getSlidesPerView();
-  if (newSlidesPerView !== slidesPerView) {
-    slidesPerView = newSlidesPerView;
-    currentSlide = 0;
-    updatePagination();
-  }
-  updateCarousel(false);
-}, 250));
-
-
-$('.page-example-box').click(function() {
-  const index = $(this).attr('id').split('-')[1];
-  const popup = $(`#popup-${index}`);
-  
-  popup.fadeIn(300).addClass('active');
-  $('body').css('overflow', 'hidden');
-  popup.find('.close_pop').focus();
-});
-
-$('.close_pop').click(function() {
-  const popup = $(this).closest('.portfolio-popup');
-  popup.removeClass('active').fadeOut(300);
-  $('body').css('overflow', 'auto');
-});
-
-
-$(document).keydown(function(e) {
-  if (e.keyCode === 27) { // ESC key
-    $('.portfolio-popup').removeClass('active').fadeOut(300);
-    $('body').css('overflow', 'auto');
-  }
-});
-
-
-updatePagination();
-updateCarousel(false);
-
-
-console.log(`Carousel initialized by ${currentUser} at ${currentDate.toISOString()}`);
-});
-  </script>
+    <script>
+      $(document).ready(function () {
+        $(".carousel").slick({
+          dots: true,
+          arrows: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
+        });
+      });
+    </script>
   </body>
 </html>
