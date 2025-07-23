@@ -3931,36 +3931,6 @@ Easily accessible by metro, car, or a walk through Kyiv’s vibrant streets, the
 </footer>
 </div>
 <!-- #page -->
-<script type="text/javascript">
-    const lazyloadRunObserver = () => {
-        const lazyloadBackgrounds = document.querySelectorAll(`.e-con.e-parent:not(.e-lazyloaded)`);
-        const lazyloadBackgroundObserver = new IntersectionObserver( (entries) => {
-            entries.forEach( (entry) => {
-                if (entry.isIntersecting) {
-                    let lazyloadBackground = entry.target;
-                    if (lazyloadBackground) {
-                        lazyloadBackground.classList.add('e-lazyloaded');
-                    }
-                    lazyloadBackgroundObserver.unobserve(entry.target);
-                }
-            }
-            );
-        }
-        ,{
-            rootMargin: '200px 0px 200px 0px'
-        });
-        lazyloadBackgrounds.forEach( (lazyloadBackground) => {
-            lazyloadBackgroundObserver.observe(lazyloadBackground);
-        }
-        );
-    }
-    ;
-    const events = ['DOMContentLoaded', 'elementor/lazyload/observe', ];
-    events.forEach( (event) => {
-        document.addEventListener(event, lazyloadRunObserver);
-    }
-    );
-</script>
 <link rel="stylesheet" id="widget-social-icons-css" href="widget-social-icons(1).min.css" media="all">
 
 <link rel="stylesheet" id="widget-icon-list-css" href="widget-icon-list(1).min.css" media="all">
@@ -3977,29 +3947,12 @@ Easily accessible by metro, car, or a walk through Kyiv’s vibrant streets, the
 <script src="frontend.min.js" id="astra-theme-js-js"></script>
 <script src="jquery-numerator.min.js" id="jquery-numerator-js"></script>
 <script src="dom-ready.min.js" id="wp-dom-ready-js"></script>
-<script id="starter-templates-zip-preview-js-extra">
-    var starter_templates_zip_preview = {
-        "AstColorPaletteVarPrefix": "--ast-global-color-",
-        "AstEleColorPaletteVarPrefix": ["ast-global-color-0", "ast-global-color-1", "ast-global-color-2", "ast-global-color-3", "ast-global-color-4", "ast-global-color-5", "ast-global-color-6", "ast-global-color-7", "ast-global-color-8"]
-    };
-</script>
 <script src="main.js" id="starter-templates-zip-preview-js"></script>
-<script id="astra-addon-js-js-extra">
-    var astraAddon = {
-        "sticky_active": "",
-        "svgIconClose": "<span class=\"ast-icon icon-close\"><svg viewBox=\"0 0 512 512\" aria-hidden=\"true\" role=\"img\" version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" width=\"18px\" height=\"18px\">\n                                <path d=\"M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z\" \/>\n                            <\/svg><\/span>",
-        "hf_account_show_menu_on": "hover",
-        "hf_account_action_type": "link",
-        "is_header_builder_active": "1"
-    };
-</script>
 <script src="astra-addon-6712860744abc9-48683035.js" id="astra-addon-js-js"></script>
 <script src="purify.min.js" id="astra-dom-purify-js"></script>
 <script src="webpack.runtime.min.js" id="elementor-webpack-runtime-js"></script>
 <script src="frontend-modules.min.js" id="elementor-frontend-modules-js"></script>
 <script src="core.min.js" id="jquery-ui-core-js"></script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
