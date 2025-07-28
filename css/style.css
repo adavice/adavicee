@@ -147,7 +147,7 @@
 }
 
 .blog .dark-section .elementor-background-overlay {
-  background-image: url(img/bg-line.png);
+  background-image: url(../img/bg-line.png);
   background-position: center center;
   background-repeat: repeat-y;
   opacity: 0.05;
@@ -272,7 +272,7 @@
   background: #fff;
   border: none;
   border-radius: 0px 5px 5px 0px;
-  background-image: url(img/icons_search.svg);
+  background-image: url(../img/icons_search.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -452,7 +452,7 @@
 .blog .article_block_left .subscribe_container {
   width: 100%;
   height: fit-content;
-  background: url("lol.jpg");
+  background: url("../img/lol.jpg");
   background-size: cover;
   background-position: center;
 }
