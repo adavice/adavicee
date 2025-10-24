@@ -612,6 +612,10 @@
   height: 250px;
 }
 
+.blog ._form-title{
+  color: #fff !important;
+}
+
 @media (max-width: 1024px) {
   .blog .elementor-206 .elementor-element.elementor-element-3e643e4 {
     padding: 0px;
